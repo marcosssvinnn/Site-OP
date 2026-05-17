@@ -459,7 +459,17 @@ nav.topo {
 }
 @media (max-width: 920px) { .autoridade-grid { grid-template-columns: 1fr; gap: 40px; } }
 
-/* Placeholder de foto estilizado */
+/* Foto do autor */
+.foto-autor {
+  aspect-ratio: 4/5; border-radius: 4px; overflow: hidden;
+  box-shadow: 0 20px 48px rgba(0,0,0,0.18);
+  position: relative;
+}
+.foto-autor img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  display: block;
+}
+/* Placeholder de foto estilizado (usado como fallback e summits) */
 .foto-placeholder {
   aspect-ratio: 4/5; border-radius: 4px; overflow: hidden;
   background: repeating-linear-gradient(
@@ -1062,9 +1072,12 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
   <div class="container">
     <div class="autoridade-grid">
 
-      <!-- PLACEHOLDER foto — substituir pelo <img> real quando disponível -->
-      <div class="foto-placeholder" aria-hidden="true">
-        FOTO · MATHEUS BANCADA
+      <div class="foto-autor">
+        <img src="img/matheus.jpg"
+             alt="Matheus All Service — técnico especialista em equipamento de piscina"
+             width="480" height="600"
+             loading="eager"
+             onerror="this.parentElement.classList.add('foto-placeholder'); this.parentElement.removeAttribute('style'); this.style.display='none';">
       </div>
 
       <div>
