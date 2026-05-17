@@ -326,8 +326,18 @@ section.bloco.cinza {
 
 /* ============ O QUE ENSINAMOS ============ */
 .equipamentos-grid {
-  display: grid; grid-template-columns: repeat(5, 1fr);
+  display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 20px; margin-top: 50px;
+}
+/* centraliza a última linha quando sobram menos de 4 cards */
+.equipamentos-grid .equip-card:nth-child(5) { grid-column: 1; }
+.equipamentos-grid .equip-card:nth-child(5),
+.equipamentos-grid .equip-card:nth-child(6),
+.equipamentos-grid .equip-card:nth-child(7) { }
+@media (min-width: 921px) {
+  .equipamentos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 @media (max-width: 920px) { .equipamentos-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .equipamentos-grid { grid-template-columns: 1fr; } }
@@ -787,11 +797,11 @@ footer ul a:focus-visible { outline: 1px solid var(--amarelo); border-radius: 2p
     <div class="hero-grid">
       <div>
         <div class="hero-tag" aria-hidden="true">
-          <span class="dot"></span> ESCOLA TÉCNICA DE EQUIPAMENTO DE PISCINA
+          <span class="dot"></span> TREINAMENTO PROFISSIONAL EM EQUIPAMENTO DE PISCINA
         </div>
-        <h1>O que o <span class="accent">mercado não ensina</span> sobre equipamento de piscina.</h1>
+        <h1>Domine o equipamento de piscina — <span class="accent">diagnóstico, instalação e manutenção</span> na prática.</h1>
         <p class="lead">
-          Bomba, robô, trocador de calor, inverter, gerador de cloro. Aprenda na prática com quem atende as maiores fábricas do Brasil há mais de 10 anos.
+          Motobombas, robôs automáticos, bomba de calor, gerador de cloro, iluminação, automação e desumidificação. Aprenda com quem atende as maiores fábricas do Brasil há mais de 10 anos.
         </p>
         <div class="hero-ctas">
           <a href="#captura" class="btn btn-primary btn-lg">Entrar no grupo grátis →</a>
@@ -808,8 +818,8 @@ footer ul a:focus-visible { outline: 1px solid var(--amarelo); border-radius: 2p
             <div class="lbl">Áreas técnicas</div>
           </div>
           <div class="hero-stat">
-            <div class="num" aria-label="2 fábricas parceiras">2</div>
-            <div class="lbl">Fábricas parceiras</div>
+            <div class="num" aria-label="Mais de 1000 equipamentos atendidos">1.000+</div>
+            <div class="lbl">Equipamentos atendidos</div>
           </div>
         </div>
       </div>
@@ -836,13 +846,11 @@ footer ul a:focus-visible { outline: 1px solid var(--amarelo); border-radius: 2p
 <!-- ============ BAR AUTORIDADE ============ -->
 <div class="bar-autoridade" aria-label="Fabricantes parceiras">
   <div class="container bar-row">
-    <div class="bar-titulo">ATENDEMOS AS MAIORES FÁBRICAS DO BRASIL</div>
+    <div class="bar-titulo">ATENDEMOS AS MAIORES E MELHORES FÁBRICAS DO BRASIL</div>
     <div class="bar-logos" aria-label="Lista de fabricantes">
       <span class="logo-marca">Fluidra</span>
       <span class="logo-marca">Syllent</span>
-      <span class="logo-marca">Sodramar</span>
       <span class="logo-marca">Tholz</span>
-      <span class="logo-marca">Hidroazul</span>
     </div>
   </div>
 </div>
@@ -852,35 +860,45 @@ footer ul a:focus-visible { outline: 1px solid var(--amarelo); border-radius: 2p
   <div class="container">
     <div class="section-head">
       <div class="eyebrow" style="color:var(--azul-piscina);">O QUE VOCÊ APRENDE</div>
-      <h2 id="equip-titulo">Todo o universo<br>do equipamento de piscina.</h2>
-      <p class="lead">Não é tratamento de água. Não é química. Aqui é equipamento técnico — diagnóstico, instalação, manutenção e configuração.</p>
+      <h2 id="equip-titulo">Tudo sobre equipamento<br>de piscina, do diagnóstico à configuração.</h2>
+      <p class="lead">Não é tratamento de água. Não é química. Aqui é equipamento técnico — aprenda a diagnosticar, instalar, manter e configurar cada componente da casa de máquinas.</p>
     </div>
 
     <div class="equipamentos-grid">
       <div class="equip-card">
         <div class="ico" aria-hidden="true">⚙️</div>
         <h3>Motobomba</h3>
-        <p>Diagnóstico, troca de selo, capacitor, instalação. Inclusive alta potência.</p>
+        <p>Diagnóstico de falha, troca de selo mecânico, capacitor, instalação e regulagem. Inclusive equipamentos de alta potência.</p>
       </div>
       <div class="equip-card">
         <div class="ico" aria-hidden="true">🤖</div>
-        <h3>Robô</h3>
-        <p>Manutenção, troca de peças, configuração de modos de limpeza.</p>
+        <h3>Robô Automático</h3>
+        <p>Manutenção preventiva e corretiva, troca de escovas e rolos, configuração dos modos de limpeza e ciclos automáticos.</p>
       </div>
       <div class="equip-card">
-        <div class="ico" aria-hidden="true">🔥</div>
-        <h3>Trocador de Calor</h3>
-        <p>Limpeza, desincrustação, troca de junta, diagnóstico de vazamento.</p>
-      </div>
-      <div class="equip-card">
-        <div class="ico" aria-hidden="true">❄️</div>
-        <h3>Inverter</h3>
-        <p>Bomba de calor inverter — instalação, configuração de modo, diagnóstico.</p>
+        <div class="ico" aria-hidden="true">🌡️</div>
+        <h3>Bomba de Calor</h3>
+        <p>Instalação, configuração de modo de operação, diagnóstico de falhas em trocadores convencionais e modelos inverter.</p>
       </div>
       <div class="equip-card">
         <div class="ico" aria-hidden="true">💧</div>
         <h3>Gerador de Cloro</h3>
-        <p>Pareamento no app, calibração de sal, troca de célula, diagnóstico.</p>
+        <p>Pareamento no aplicativo, calibração de concentração de sal, troca de célula eletrolítica e diagnóstico de eletrodo.</p>
+      </div>
+      <div class="equip-card">
+        <div class="ico" aria-hidden="true">💡</div>
+        <h3>Iluminação</h3>
+        <p>Instalação e substituição de luminárias LED de piscina, diagnóstico de falha elétrica e configuração de centrais de automação de luz.</p>
+      </div>
+      <div class="equip-card">
+        <div class="ico" aria-hidden="true">🎛️</div>
+        <h3>Automação</h3>
+        <p>Configuração de centrais de automação residencial e de piscina, integração de equipamentos e parametrização via app.</p>
+      </div>
+      <div class="equip-card">
+        <div class="ico" aria-hidden="true">💨</div>
+        <h3>Desumidificação</h3>
+        <p>Instalação e manutenção de desumidificadores para piscinas cobertas, regulagem de umidade e diagnóstico de compressor.</p>
       </div>
     </div>
   </div>
