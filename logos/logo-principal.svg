@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" width="520" height="180">
+  <title>Oficina da Piscina Academy — Logo Principal</title>
+  <!-- Selo -->
+  <g transform="translate(20,20)">
+    <path d="M70 0 L140 22 L140 92 C140 122 70 144 70 144 C70 144 0 122 0 92 L0 22 Z" fill="#003366"/>
+    <path d="M70 0 L140 22 L140 92 C140 122 70 144 70 144 C70 144 0 122 0 92 L0 22 Z" fill="none" stroke="#FFC107" stroke-width="4"/>
+    <!-- Monograma OP -->
+    <text x="70" y="80" text-anchor="middle" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="52" fill="#FFC107" letter-spacing="-1">OP</text>
+    <!-- Ondinha -->
+    <path d="M30 100 Q44 92 58 100 T86 100 T114 100" stroke="#0066CC" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- Subtítulo dentro do selo -->
+    <text x="70" y="118" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="10" fill="#FFFFFF" letter-spacing="4">ACADEMY</text>
+  </g>
+  <!-- Wordmark -->
+  <g transform="translate(190,38)">
+    <text x="0" y="34" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="36" fill="#003366" letter-spacing="-0.5">OFICINA</text>
+    <text x="0" y="76" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="36" fill="#003366" letter-spacing="-0.5">DA PISCINA</text>
+    <!-- linha laranja -->
+    <line x1="0" y1="92" x2="280" y2="92" stroke="#FFC107" stroke-width="3"/>
+    <text x="0" y="112" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="12" fill="#003366" letter-spacing="6">A C A D E M Y</text>
+  </g>
+</svg>
