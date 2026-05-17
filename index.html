@@ -178,7 +178,7 @@ nav.topo {
   position: relative;
   background: var(--preto);
   color: white;
-  min-height: 92vh;
+  min-height: 88vh;
   display: flex; align-items: center;
   overflow: hidden;
 }
@@ -200,12 +200,16 @@ nav.topo {
     radial-gradient(circle at 25% 25%, rgba(255,193,7,0.04) 0%, transparent 35%),
     radial-gradient(circle at 75% 75%, rgba(0,102,204,0.06) 0%, transparent 40%);
 }
-.hero .container { position: relative; z-index: 2; padding: 80px 24px; }
-.hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; }
-@media (max-width: 920px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 50px; }
-  .hero-visual { display: none; } /* oculta placeholder no mobile */
+.hero .container { position: relative; z-index: 2; padding: 64px 24px; }
+
+/* Hero: coluna única centralizada enquanto não há foto real */
+.hero-grid {
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  max-width: 860px; margin: 0 auto;
 }
+/* Oculta o placeholder visual em todos os tamanhos de tela */
+.hero-visual { display: none; }
 
 .hero-tag {
   display: inline-flex; align-items: center; gap: 10px;
@@ -227,19 +231,20 @@ nav.topo {
 }
 
 .hero h1 {
-  font-weight: 900; margin-bottom: 24px;
+  font-weight: 900; margin-bottom: 20px;
   letter-spacing: -1.5px; line-height: 1.05;
 }
 .hero h1 .accent { color: var(--amarelo); }
 
 .hero .lead {
   font-size: clamp(16px, 1.5vw, 19px);
-  opacity: 0.85; max-width: 540px;
-  margin-bottom: 36px; line-height: 1.55;
+  opacity: 0.85; max-width: 680px;
+  margin: 0 auto 32px; line-height: 1.6;
 }
 
-.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
-.hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 480px; }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px; }
+.hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 520px; margin: 0 auto; }
+.hero-stat { text-align: center; }
 .hero-stat .num { font-size: 28px; font-weight: 900; color: var(--amarelo); letter-spacing: -1px; line-height: 1; }
 .hero-stat .lbl { font-size: 11px; opacity: 0.7; margin-top: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
 
@@ -304,7 +309,7 @@ nav.topo {
 .logo-marca:hover { opacity: 1; }
 
 /* ============ SEÇÕES ============ */
-section.bloco { padding: 100px 0; }
+section.bloco { padding: 72px 0; }
 section.bloco.escuro {
   background: var(--azul-profundo); color: white;
 }
@@ -315,7 +320,7 @@ section.bloco.cinza {
   background: var(--cinza-claro);
 }
 
-.section-head { max-width: 720px; margin: 0 auto 64px; text-align: center; }
+.section-head { max-width: 720px; margin: 0 auto 48px; text-align: center; }
 .section-head.left { margin-left: 0; text-align: left; }
 .section-head h2 { margin-bottom: 18px; }
 .section-head .lead {
@@ -548,7 +553,7 @@ section.bloco.cinza {
   background:
     linear-gradient(135deg, rgba(0,31,71,0.95) 0%, rgba(0,51,102,0.95) 100%),
     radial-gradient(circle at 30% 30%, rgba(255,193,7,0.1) 0%, transparent 50%);
-  color: white; padding: 80px 0;
+  color: white; padding: 64px 0;
   position: relative; overflow: hidden;
 }
 .cta-grande::before {
@@ -620,7 +625,7 @@ section.bloco.cinza {
 /* ============ B2B ============ */
 .b2b-bloco {
   background: var(--preto); color: white;
-  padding: 100px 0;
+  padding: 72px 0;
 }
 .b2b-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
 @media (max-width: 920px) { .b2b-grid { grid-template-columns: 1fr; } }
@@ -692,9 +697,9 @@ section.bloco.cinza {
 /* ============ FOOTER ============ */
 footer.site-footer {
   background: var(--preto); color: white;
-  padding: 70px 0 30px;
+  padding: 52px 0 28px;
 }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
 @media (max-width: 920px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; } }
 @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
 .footer-brand { max-width: 320px; }
@@ -799,9 +804,9 @@ footer ul a:focus-visible { outline: 1px solid var(--amarelo); border-radius: 2p
         <div class="hero-tag" aria-hidden="true">
           <span class="dot"></span> TREINAMENTO PROFISSIONAL EM EQUIPAMENTO DE PISCINA
         </div>
-        <h1>Domine o <span class="accent">equipamento de piscina</span> que o mercado não ensina.</h1>
+        <h1>O técnico que domina o <span class="accent">equipamento de piscina</span> nunca falta serviço.</h1>
         <p class="lead">
-          Treinamento prático em motobomba, robô automático, bomba de calor, gerador de cloro, iluminação, automação e desumidificação. Com quem atende as maiores fábricas do Brasil há mais de 10 anos.
+          Aprenda na prática a diagnosticar, instalar e configurar motobombas, robôs automáticos, bomba de calor, gerador de cloro, iluminação, automação e desumidificação. Com técnico autorizado Fluidra e Syllent há mais de 10 anos.
         </p>
         <div class="hero-ctas">
           <a href="#captura" class="btn btn-primary btn-lg">Entrar no grupo grátis →</a>
