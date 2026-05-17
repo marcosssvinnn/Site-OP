@@ -5,10 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Oficina da Piscina Academy — A escola técnica de equipamento de piscina</title>
 <meta name="description" content="A escola que ensina o que o mercado não ensina: motobomba, robô, trocador, inverter, gerador de cloro. Com Matheus All Service, técnico autorizado Fluidra e Syllent.">
-<meta property="og:title" content="Oficina da Piscina Academy">
-<meta property="og:description" content="Aprenda equipamentos de piscina na prática. Com Matheus All Service.">
-<meta property="og:image" content="logos/logo-icone-1000.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://marcosssvinnn.github.io/Site-OP/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marcosssvinnn.github.io/Site-OP/">
+<meta property="og:title" content="Oficina da Piscina Academy — A escola técnica de equipamento de piscina">
+<meta property="og:description" content="Aprenda equipamentos de piscina na prática com técnico autorizado Fluidra e Syllent há mais de 10 anos.">
+<meta property="og:image" content="https://marcosssvinnn.github.io/Site-OP/logos/logo-icone-1000.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Oficina da Piscina Academy">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oficina da Piscina Academy">
+<meta name="twitter:description" content="Aprenda equipamentos de piscina na prática com técnico autorizado Fluidra e Syllent.">
+<meta name="twitter:image" content="https://marcosssvinnn.github.io/Site-OP/logos/logo-icone-1000.png">
+
+<!-- Favicon -->
 <link rel="icon" href="logos/logo-icone.svg" type="image/svg+xml">
+
+<!-- Google Fonts: Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Oficina da Piscina Academy",
+  "url": "https://marcosssvinnn.github.io/Site-OP/",
+  "logo": "https://marcosssvinnn.github.io/Site-OP/logos/logo-icone-1000.png",
+  "description": "Escola técnica de equipamento de piscina — motobomba, robô, trocador de calor, inverter e gerador de cloro.",
+  "founder": {
+    "@type": "Person",
+    "name": "Matheus All Service"
+  },
+  "sameAs": [
+    "https://www.instagram.com/SEUPERFIL",
+    "https://www.youtube.com/@SEUCANAL"
+  ]
+}
+</script>
 
 <style>
 :root {
@@ -47,6 +89,14 @@ h3 { font-size: clamp(20px, 2vw, 28px); }
 .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 .container-sm { max-width: 920px; margin: 0 auto; padding: 0 24px; }
 
+/* Skip to content — acessibilidade */
+.skip-link {
+  position: absolute; left: -9999px; top: 8px; z-index: 9999;
+  background: var(--azul-piscina); color: white;
+  padding: 10px 18px; border-radius: 6px; font-weight: 700; font-size: 14px;
+}
+.skip-link:focus { left: 8px; }
+
 .eyebrow {
   display: inline-block;
   font-size: 12px; font-weight: 800; letter-spacing: 2.5px;
@@ -67,10 +117,12 @@ h3 { font-size: clamp(20px, 2vw, 28px); }
   background: var(--azul-piscina); color: white;
 }
 .btn-primary:hover { background: var(--azul-profundo); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,102,204,0.25); }
+.btn-primary:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; }
 .btn-secondary {
   background: transparent; color: var(--texto); border-color: var(--texto);
 }
 .btn-secondary:hover { background: var(--texto); color: white; }
+.btn-secondary:focus-visible { outline: 3px solid var(--azul-piscina); outline-offset: 2px; }
 .btn-ghost {
   background: transparent; color: white; border-color: rgba(255,255,255,0.3);
 }
@@ -103,10 +155,21 @@ nav.topo {
   transition: color 0.15s;
 }
 .nav-links a:hover { color: var(--azul-piscina); }
-.nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-links a:focus-visible { outline: 2px solid var(--azul-piscina); border-radius: 4px; }
+.nav-mobile-toggle {
+  display: none; background: none; border: none; cursor: pointer; padding: 8px;
+  font-size: 20px; color: var(--azul-profundo);
+}
+.nav-mobile-toggle:focus-visible { outline: 2px solid var(--azul-piscina); border-radius: 4px; }
 @media (max-width: 920px) {
   .nav-links { display: none; }
-  .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 24px; border-bottom: 1px solid #eee; gap: 16px; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: white; padding: 24px;
+    border-bottom: 1px solid #eee; gap: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
   .nav-mobile-toggle { display: block; }
 }
 
@@ -139,7 +202,10 @@ nav.topo {
 }
 .hero .container { position: relative; z-index: 2; padding: 80px 24px; }
 .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; }
-@media (max-width: 920px) { .hero-grid { grid-template-columns: 1fr; gap: 50px; } }
+@media (max-width: 920px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+  .hero-visual { display: none; } /* oculta placeholder no mobile */
+}
 
 .hero-tag {
   display: inline-flex; align-items: center; gap: 10px;
@@ -149,8 +215,16 @@ nav.topo {
   font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
   text-transform: uppercase; margin-bottom: 24px;
 }
-.hero-tag .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--amarelo); animation: pulse 2s infinite; }
+.hero-tag .dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--amarelo);
+  animation: pulse 2s infinite;
+}
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-tag .dot { animation: none; }
+  html { scroll-behavior: auto; }
+  .btn, .equip-card, .video-card, .blog-card { transition: none; }
+}
 
 .hero h1 {
   font-weight: 900; margin-bottom: 24px;
@@ -184,7 +258,6 @@ nav.topo {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   color: rgba(255,255,255,0.3);
   background:
-    /* PLACEHOLDER: trocar por foto do Matheus na oficina */
     repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(255,255,255,0.02) 12px, rgba(255,255,255,0.02) 24px);
 }
 .hero-visual .ph-icon { font-size: 48px; margin-bottom: 12px; }
@@ -219,6 +292,7 @@ nav.topo {
 .bar-titulo {
   font-size: 12px; font-weight: 700; letter-spacing: 2px;
   color: var(--texto-secundario); text-transform: uppercase;
+  white-space: nowrap;
 }
 .bar-logos { display: flex; gap: 48px; align-items: center; flex-wrap: wrap; }
 .logo-marca {
@@ -345,11 +419,6 @@ section.bloco.cinza {
 .galeria-item .ph small {
   font-size: 9px; opacity: 0.6;
 }
-.galeria-legenda {
-  text-align: center; margin-top: 30px;
-  color: rgba(255,255,255,0.6); font-size: 13px;
-  font-style: italic;
-}
 
 /* ============ VITRINE DE VÍDEOS ============ */
 .videos-grid {
@@ -361,10 +430,15 @@ section.bloco.cinza {
   background: white; border-radius: 14px; overflow: hidden;
   border: 1px solid var(--cinza-medio);
   transition: all 0.25s ease;
-  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 .video-card:hover {
   transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+.video-card:focus-visible {
+  outline: 3px solid var(--azul-piscina); outline-offset: 2px;
 }
 .video-thumb {
   aspect-ratio: 16/9; background: var(--azul-profundo);
@@ -459,18 +533,6 @@ section.bloco.cinza {
 .depo-card .nome { font-weight: 700; font-size: 14px; }
 .depo-card .funcao { font-size: 12px; color: var(--texto-secundario); }
 
-.depo-placeholder {
-  background: var(--cinza-claro);
-  border: 2px dashed var(--cinza-medio);
-  padding: 32px; border-radius: 14px;
-  text-align: center;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  min-height: 240px;
-  color: var(--texto-secundario);
-}
-.depo-placeholder strong { display: block; font-size: 13px; letter-spacing: 1.5px; margin-bottom: 8px; color: var(--azul-profundo); }
-.depo-placeholder small { font-size: 12px; }
-
 /* ============ FORMULÁRIO WHATSAPP ============ */
 .cta-grande {
   background:
@@ -492,16 +554,16 @@ section.bloco.cinza {
 .cta-grande p { font-size: 17px; opacity: 0.85; line-height: 1.6; margin-bottom: 24px; }
 .cta-grande ul { list-style: none; padding: 0; }
 .cta-grande ul li {
-  padding: 8px 0 8px 32px; position: relative;
+  padding: 8px 0 8px 36px; position: relative;
   font-size: 15px; opacity: 0.9; line-height: 1.4;
 }
 .cta-grande ul li::before {
-  content: '✓'; position: absolute; left: 0;
+  content: '✓';
+  position: absolute; left: 0; top: 8px;
   width: 22px; height: 22px; border-radius: 50%;
   background: var(--amarelo); color: var(--azul-profundo);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 900;
-  top: 8px;
+  font-size: 12px; font-weight: 900; line-height: 22px;
+  text-align: center;
 }
 
 .form-captura {
@@ -512,7 +574,10 @@ section.bloco.cinza {
 .form-captura h3 { color: var(--azul-profundo); margin-bottom: 6px; font-size: 22px; }
 .form-captura .sub { color: var(--texto-secundario); font-size: 13px; margin-bottom: 22px; }
 .form-field { margin-bottom: 14px; }
-.form-field label { display: block; font-size: 12px; font-weight: 700; color: var(--azul-profundo); margin-bottom: 6px; letter-spacing: 0.5px; }
+.form-field label {
+  display: block; font-size: 12px; font-weight: 700;
+  color: var(--azul-profundo); margin-bottom: 6px; letter-spacing: 0.5px;
+}
 .form-field input, .form-field select {
   width: 100%; padding: 13px 14px;
   border: 1.5px solid var(--cinza-medio); border-radius: 8px;
@@ -521,9 +586,26 @@ section.bloco.cinza {
 }
 .form-field input:focus, .form-field select:focus {
   outline: none; border-color: var(--azul-piscina);
+  box-shadow: 0 0 0 3px rgba(0,102,204,0.12);
 }
+.form-field input.error { border-color: #dc2626; }
+.form-error { font-size: 11px; color: #dc2626; margin-top: 4px; display: none; }
+.form-error.show { display: block; }
 .form-consent { font-size: 11px; color: var(--texto-secundario); margin-top: 12px; line-height: 1.4; }
-.form-consent input { margin-right: 6px; vertical-align: middle; }
+.form-consent input { margin-right: 6px; vertical-align: middle; cursor: pointer; }
+
+/* Botão submit do formulário */
+.btn-submit {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 18px 36px; border-radius: 8px;
+  font-weight: 700; font-size: 15px; letter-spacing: 0.3px;
+  background: var(--azul-piscina); color: white;
+  border: none; cursor: pointer; margin-top: 8px;
+  transition: all 0.2s ease;
+}
+.btn-submit:hover { background: var(--azul-profundo); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,102,204,0.25); }
+.btn-submit:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; }
+.btn-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
 /* ============ B2B ============ */
 .b2b-bloco {
@@ -562,9 +644,12 @@ section.bloco.cinza {
   background: white; border-radius: 14px; overflow: hidden;
   border: 1px solid var(--cinza-medio);
   transition: all 0.25s ease;
-  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 .blog-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0,0,0,0.08); }
+.blog-card:focus-visible { outline: 3px solid var(--azul-piscina); outline-offset: 2px; }
 .blog-img {
   aspect-ratio: 16/10;
   background: linear-gradient(135deg, #003366 0%, #001F47 100%);
@@ -600,7 +685,8 @@ footer.site-footer {
   padding: 70px 0 30px;
 }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
-@media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; } }
+@media (max-width: 920px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; } }
+@media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
 .footer-brand { max-width: 320px; }
 .footer-brand img { width: 56px; margin-bottom: 18px; }
 .footer-brand p { opacity: 0.7; font-size: 13px; margin-top: 4px; line-height: 1.55; }
@@ -610,60 +696,97 @@ footer.site-footer {
   background: rgba(255,255,255,0.06);
   display: flex; align-items: center; justify-content: center;
   font-size: 15px; transition: all 0.2s;
+  font-weight: 700;
 }
 .footer-social a:hover { background: var(--azul-piscina); transform: translateY(-2px); }
+.footer-social a:focus-visible { outline: 2px solid var(--amarelo); outline-offset: 2px; }
 footer h4 { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; color: var(--amarelo); }
 footer ul { list-style: none; }
 footer li { margin-bottom: 10px; }
 footer ul a { color: white; opacity: 0.65; font-size: 13px; transition: opacity 0.15s; }
 footer ul a:hover { opacity: 1; }
+footer ul a:focus-visible { outline: 1px solid var(--amarelo); border-radius: 2px; }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px;
   display: flex; justify-content: space-between; align-items: center;
   font-size: 11px; opacity: 0.5; flex-wrap: wrap; gap: 12px;
 }
 
-/* PLACEHOLDER UTILS */
-.placeholder-tag {
-  position: absolute; top: 12px; left: 12px;
-  background: var(--amarelo); color: var(--azul-profundo);
-  padding: 4px 10px; border-radius: 4px;
-  font-size: 9px; font-weight: 800; letter-spacing: 1px;
-  z-index: 3;
+/* ============ BOTÃO FLUTUANTE WHATSAPP ============ */
+.fab-whatsapp {
+  position: fixed; bottom: 28px; right: 28px; z-index: 500;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: #25D366; color: white;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.45);
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
+.fab-whatsapp:hover { transform: scale(1.1); box-shadow: 0 10px 28px rgba(37,211,102,0.55); }
+.fab-whatsapp:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+.fab-whatsapp svg { width: 28px; height: 28px; fill: white; }
+@media (max-width: 520px) {
+  .fab-whatsapp { bottom: 18px; right: 18px; width: 54px; height: 54px; }
+}
+
+/* ============ SCROLL TO TOP ============ */
+.scroll-top {
+  position: fixed; bottom: 28px; left: 28px; z-index: 500;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--azul-profundo); color: white;
+  display: flex; align-items: center; justify-content: center;
+  border: none; cursor: pointer; font-size: 18px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  opacity: 0; pointer-events: none;
+  transition: all 0.3s ease;
+}
+.scroll-top.visible { opacity: 1; pointer-events: auto; }
+.scroll-top:hover { background: var(--azul-piscina); transform: translateY(-2px); }
+.scroll-top:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; }
 </style>
 </head>
 <body>
 
+<!-- Skip to content — acessibilidade teclado -->
+<a href="#main" class="skip-link">Pular para o conteúdo</a>
+
 <!-- ============ NAV ============ -->
-<nav class="topo">
+<nav class="topo" role="navigation" aria-label="Menu principal">
   <div class="container nav-row">
-    <a href="#" class="nav-logo">
-      <img src="logos/logo-icone.svg" alt="OP">
+    <a href="/" class="nav-logo" aria-label="Oficina da Piscina Academy — Início">
+      <img src="logos/logo-icone.svg" alt="" width="44" height="44" aria-hidden="true">
       <div class="marca">
         OFICINA DA PISCINA
         <small>A C A D E M Y</small>
       </div>
     </a>
-    <div class="nav-links" id="navLinks">
-      <a href="#equipamentos">O que ensinamos</a>
-      <a href="#autoridade">Quem é o Matheus</a>
-      <a href="#videos">Vídeos</a>
-      <a href="#para-lojas">Para lojas</a>
-      <a href="/blog">Blog</a>
-      <a href="#captura" class="btn btn-primary">Entrar no grupo</a>
+    <div class="nav-links" id="navLinks" role="list">
+      <a href="#equipamentos" role="listitem">O que ensinamos</a>
+      <a href="#autoridade" role="listitem">Quem é o Matheus</a>
+      <a href="#videos" role="listitem">Vídeos</a>
+      <a href="#para-lojas" role="listitem">Para lojas</a>
+      <!-- TODO: substituir /blog pelo link real quando o blog estiver no ar -->
+      <a href="/blog" role="listitem">Blog</a>
+      <a href="#captura" class="btn btn-primary" role="listitem">Entrar no grupo</a>
     </div>
-    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    <button
+      class="nav-mobile-toggle"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="navLinks"
+      onclick="toggleMenu(this)"
+    >☰</button>
   </div>
 </nav>
 
 <!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="hero-bg"></div>
+<main id="main">
+<section class="hero" aria-label="Apresentação">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="container">
     <div class="hero-grid">
       <div>
-        <div class="hero-tag">
+        <div class="hero-tag" aria-hidden="true">
           <span class="dot"></span> ESCOLA TÉCNICA DE EQUIPAMENTO DE PISCINA
         </div>
         <h1>O que o <span class="accent">mercado não ensina</span> sobre equipamento de piscina.</h1>
@@ -672,28 +795,29 @@ footer ul a:hover { opacity: 1; }
         </p>
         <div class="hero-ctas">
           <a href="#captura" class="btn btn-primary btn-lg">Entrar no grupo grátis →</a>
-          <a href="#videos" class="btn btn-ghost btn-lg">Ver aulas no YouTube</a>
+          <!-- TODO: substituir pelo link real do canal do YouTube -->
+          <a href="https://youtube.com/@SEUCANAL" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Ver aulas no YouTube</a>
         </div>
-        <div class="hero-stats">
+        <div class="hero-stats" aria-label="Números de destaque">
           <div class="hero-stat">
-            <div class="num">10+</div>
+            <div class="num" aria-label="Mais de 10 anos de prática">10+</div>
             <div class="lbl">Anos de prática</div>
           </div>
           <div class="hero-stat">
-            <div class="num">5</div>
+            <div class="num" aria-label="5 áreas técnicas">5</div>
             <div class="lbl">Áreas técnicas</div>
           </div>
           <div class="hero-stat">
-            <div class="num">2</div>
+            <div class="num" aria-label="2 fábricas parceiras">2</div>
             <div class="lbl">Fábricas parceiras</div>
           </div>
         </div>
       </div>
 
-      <div class="hero-visual">
+      <div class="hero-visual" aria-hidden="true">
         <div class="badge-cred">TÉCNICO AUTORIZADO</div>
         <div class="frame">
-          <!-- PLACEHOLDER 1: Foto do Matheus na oficina, em bancada, ou no atendimento -->
+          <!-- PLACEHOLDER: trocar por <img src="img/matheus-hero.jpg" alt="Matheus All Service na oficina"> -->
           <div class="placeholder-foto">
             <div class="ph-icon">📸</div>
             <div class="ph-txt">FOTO DO MATHEUS</div>
@@ -701,7 +825,7 @@ footer ul a:hover { opacity: 1; }
           </div>
         </div>
         <div class="selo-corner">
-          <img src="logos/logo-icone.svg" alt="Selo OP" style="width:100%;border-radius:50%;">
+          <img src="logos/logo-icone.svg" alt="" aria-hidden="true" style="width:100%;border-radius:50%;">
         </div>
       </div>
 
@@ -710,10 +834,10 @@ footer ul a:hover { opacity: 1; }
 </section>
 
 <!-- ============ BAR AUTORIDADE ============ -->
-<div class="bar-autoridade">
+<div class="bar-autoridade" aria-label="Fabricantes parceiras">
   <div class="container bar-row">
     <div class="bar-titulo">ATENDEMOS AS MAIORES FÁBRICAS DO BRASIL</div>
-    <div class="bar-logos">
+    <div class="bar-logos" aria-label="Lista de fabricantes">
       <span class="logo-marca">Fluidra</span>
       <span class="logo-marca">Syllent</span>
       <span class="logo-marca">Sodramar</span>
@@ -724,37 +848,37 @@ footer ul a:hover { opacity: 1; }
 </div>
 
 <!-- ============ O QUE ENSINAMOS ============ -->
-<section class="bloco" id="equipamentos">
+<section class="bloco" id="equipamentos" aria-labelledby="equip-titulo">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow" style="color:var(--azul-piscina);">O QUE VOCÊ APRENDE</div>
-      <h2>Todo o universo<br>do equipamento de piscina.</h2>
+      <h2 id="equip-titulo">Todo o universo<br>do equipamento de piscina.</h2>
       <p class="lead">Não é tratamento de água. Não é química. Aqui é equipamento técnico — diagnóstico, instalação, manutenção e configuração.</p>
     </div>
 
     <div class="equipamentos-grid">
       <div class="equip-card">
-        <div class="ico">⚙️</div>
+        <div class="ico" aria-hidden="true">⚙️</div>
         <h3>Motobomba</h3>
         <p>Diagnóstico, troca de selo, capacitor, instalação. Inclusive alta potência.</p>
       </div>
       <div class="equip-card">
-        <div class="ico">🤖</div>
+        <div class="ico" aria-hidden="true">🤖</div>
         <h3>Robô</h3>
         <p>Manutenção, troca de peças, configuração de modos de limpeza.</p>
       </div>
       <div class="equip-card">
-        <div class="ico">🔥</div>
+        <div class="ico" aria-hidden="true">🔥</div>
         <h3>Trocador de Calor</h3>
         <p>Limpeza, desincrustação, troca de junta, diagnóstico de vazamento.</p>
       </div>
       <div class="equip-card">
-        <div class="ico">❄️</div>
+        <div class="ico" aria-hidden="true">❄️</div>
         <h3>Inverter</h3>
         <p>Bomba de calor inverter — instalação, configuração de modo, diagnóstico.</p>
       </div>
       <div class="equip-card">
-        <div class="ico">💧</div>
+        <div class="ico" aria-hidden="true">💧</div>
         <h3>Gerador de Cloro</h3>
         <p>Pareamento no app, calibração de sal, troca de célula, diagnóstico.</p>
       </div>
@@ -763,13 +887,12 @@ footer ul a:hover { opacity: 1; }
 </section>
 
 <!-- ============ AUTORIDADE / SOBRE ============ -->
-<section class="bloco cinza" id="autoridade">
+<section class="bloco cinza" id="autoridade" aria-labelledby="autor-titulo">
   <div class="container">
     <div class="autoridade-grid">
       <div class="autoridade-foto">
-        <!-- PLACEHOLDER 2: Foto do Matheus de corpo inteiro ou retrato em ambiente técnico -->
-        <span class="placeholder-tag">SUBIR FOTO</span>
-        <div class="placeholder">
+        <!-- PLACEHOLDER: trocar por <img src="img/matheus-sobre.jpg" alt="Matheus All Service, técnico autorizado Fluidra e Syllent" loading="lazy"> -->
+        <div class="placeholder" aria-hidden="true">
           <strong>FOTO DO MATHEUS</strong>
           <small>Vertical · 4:5 · em alta resolução<br>img/matheus-sobre.jpg</small>
         </div>
@@ -777,7 +900,7 @@ footer ul a:hover { opacity: 1; }
 
       <div>
         <div class="eyebrow" style="color:var(--azul-piscina);">QUEM ENSINA</div>
-        <h2>Matheus All Service.</h2>
+        <h2 id="autor-titulo">Matheus All Service.</h2>
         <p class="lead-grande">Técnico autorizado Fluidra e Syllent há mais de 10 anos. Atende as maiores fábricas do setor.</p>
         <p>Já abri centenas de motobombas (incluindo de alta potência), troquei selos em casa de máquinas de alto padrão, configurei gerador de cloro, instalei bomba de calor / inverter e fiz manutenção em robôs e desumidificadores de piscina coberta.</p>
         <p>O que eu ensino aqui é exatamente o que eu uso na bancada todo dia.</p>
@@ -806,123 +929,120 @@ footer ul a:hover { opacity: 1; }
 </section>
 
 <!-- ============ GALERIA SUMMITS / FABRICANTES ============ -->
-<section class="bloco escuro">
+<section class="bloco escuro" aria-labelledby="galeria-titulo">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">RECONHECIMENTO DAS FÁBRICAS</div>
-      <h2>Em campo, em eventos, em treinamentos.</h2>
+      <h2 id="galeria-titulo">Em campo, em eventos, em treinamentos.</h2>
       <p class="lead">Presença em summits, treinamentos oficiais e relacionamento direto com as fabricantes do setor.</p>
     </div>
 
     <div class="galeria-summits">
-      <!-- PLACEHOLDER 3-6: Fotos com fabricantes, summits, treinamentos -->
-      <div class="galeria-item">
-        <span class="placeholder-tag">SUBIR</span>
+      <!-- PLACEHOLDER: substituir cada .galeria-item por <img src="img/summit-N.jpg" alt="Descrição" loading="lazy"> -->
+      <div class="galeria-item" aria-hidden="true">
         <div class="ph"><strong>FOTO 1</strong><small>Summit ou treinamento<br>img/summit-1.jpg</small></div>
       </div>
-      <div class="galeria-item">
-        <span class="placeholder-tag">SUBIR</span>
+      <div class="galeria-item" aria-hidden="true">
         <div class="ph"><strong>FOTO 2</strong><small>Fábrica visitada<br>img/summit-2.jpg</small></div>
       </div>
-      <div class="galeria-item">
-        <span class="placeholder-tag">SUBIR</span>
+      <div class="galeria-item" aria-hidden="true">
         <div class="ph"><strong>FOTO 3</strong><small>Treinamento Fluidra<br>img/summit-3.jpg</small></div>
       </div>
-      <div class="galeria-item">
-        <span class="placeholder-tag">SUBIR</span>
+      <div class="galeria-item" aria-hidden="true">
         <div class="ph"><strong>FOTO 4</strong><small>Treinamento Syllent<br>img/summit-4.jpg</small></div>
       </div>
     </div>
-    <p class="galeria-legenda">Substitua estes placeholders pelas suas fotos reais com fabricantes</p>
   </div>
 </section>
 
 <!-- ============ VITRINE DE VÍDEOS ============ -->
-<section class="bloco" id="videos">
+<section class="bloco" id="videos" aria-labelledby="videos-titulo">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow" style="color:var(--azul-piscina);">CONTEÚDO GRÁTIS</div>
-      <h2>Aprende agora,<br>antes de pagar nada.</h2>
+      <h2 id="videos-titulo">Aprende agora,<br>antes de pagar nada.</h2>
       <p class="lead">Vídeos novos toda terça e sexta no YouTube. Salva os mais úteis pra consultar na próxima visita técnica.</p>
     </div>
 
     <div class="videos-grid">
-      <div class="video-card">
+      <!-- TODO: substituir href pelos links reais dos vídeos no YouTube -->
+      <a href="https://youtube.com/@SEUCANAL" target="_blank" rel="noopener noreferrer" class="video-card" aria-label="Assistir: Bomba de piscina não liga — 5 causas e como resolver">
         <div class="video-thumb">
-          <div class="ph-content">
+          <div class="ph-content" aria-hidden="true">
             <div class="ph-titulo">Bomba<br>não liga?<br><span class="destaque">5 causas</span></div>
           </div>
-          <div class="ph-icone-play">▶</div>
+          <div class="ph-icone-play" aria-hidden="true">▶</div>
         </div>
         <div class="video-info">
           <div class="cat">TUTORIAL · HIDRÁULICA</div>
           <h4>Bomba de piscina não liga: 5 causas e como resolver</h4>
           <div class="meta">12 min · YouTube</div>
         </div>
-      </div>
+      </a>
 
-      <div class="video-card bege">
+      <a href="https://youtube.com/@SEUCANAL" target="_blank" rel="noopener noreferrer" class="video-card bege" aria-label="Assistir: 3 erros de instalação que queimam o motor da bomba">
         <div class="video-thumb">
-          <div class="ph-content">
+          <div class="ph-content" aria-hidden="true">
             <div class="ph-titulo">3 erros<br>que <span class="destaque">queimam</span><br>o motor</div>
           </div>
-          <div class="ph-icone-play">▶</div>
+          <div class="ph-icone-play" aria-hidden="true">▶</div>
         </div>
         <div class="video-info">
           <div class="cat">ERROS · HIDRÁULICA</div>
           <h4>3 erros de instalação que queimam o motor da bomba</h4>
           <div class="meta">9 min · YouTube</div>
         </div>
-      </div>
+      </a>
 
-      <div class="video-card">
+      <a href="https://youtube.com/@SEUCANAL" target="_blank" rel="noopener noreferrer" class="video-card" aria-label="Assistir: Como parear o gerador de cloro no app passo a passo">
         <div class="video-thumb">
-          <div class="ph-content">
+          <div class="ph-content" aria-hidden="true">
             <div class="ph-titulo">Gerador<br>de cloro<br>não pareia</div>
           </div>
-          <div class="ph-icone-play">▶</div>
+          <div class="ph-icone-play" aria-hidden="true">▶</div>
         </div>
         <div class="video-info">
           <div class="cat">TUTORIAL · TRATAMENTO</div>
           <h4>Como parear o gerador de cloro no app passo a passo</h4>
           <div class="meta">14 min · YouTube</div>
         </div>
-      </div>
+      </a>
     </div>
 
     <div class="videos-cta">
-      <a href="#" class="btn btn-secondary btn-lg">Ver canal completo no YouTube →</a>
+      <!-- TODO: substituir pelo link real do canal do YouTube -->
+      <a href="https://youtube.com/@SEUCANAL" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">Ver canal completo no YouTube →</a>
     </div>
   </div>
 </section>
 
 <!-- ============ PARA QUEM ============ -->
-<section class="bloco cinza">
+<section class="bloco cinza" aria-labelledby="paraquem-titulo">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow" style="color:var(--azul-piscina);">PARA QUEM É</div>
-      <h2>Quem aprende aqui.</h2>
+      <h2 id="paraquem-titulo">Quem aprende aqui.</h2>
       <p class="lead">Se você lida com equipamento de piscina ou quer começar a lidar, este é o lugar certo.</p>
     </div>
 
     <div class="personas-grid">
       <div class="persona-card">
-        <div class="num">01</div>
+        <div class="num" aria-hidden="true">01</div>
         <h3>Técnico de loja</h3>
         <p>Funcionário de loja de piscina que precisa atender melhor: instalação, garantia, configuração.</p>
       </div>
       <div class="persona-card">
-        <div class="num">02</div>
+        <div class="num" aria-hidden="true">02</div>
         <h3>Piscineiro evoluindo</h3>
         <p>Piscineiro de limpeza que quer subir o ticket fazendo serviços técnicos de equipamento.</p>
       </div>
       <div class="persona-card">
-        <div class="num">03</div>
+        <div class="num" aria-hidden="true">03</div>
         <h3>Técnico migrando</h3>
         <p>Vem de refrigeração, elétrica ou ar-condicionado e quer entrar num nicho rentável.</p>
       </div>
       <div class="persona-card">
-        <div class="num">04</div>
+        <div class="num" aria-hidden="true">04</div>
         <h3>Loja ou distribuidora</h3>
         <p>Empresa que precisa capacitar a equipe técnica para reduzir retrabalho e garantia.</p>
       </div>
@@ -930,38 +1050,27 @@ footer ul a:hover { opacity: 1; }
   </div>
 </section>
 
-<!-- ============ DEPOIMENTOS ============ -->
-<section class="bloco">
+<!-- ============ DEPOIMENTOS — oculto até ter depoimentos reais ============ -->
+<!-- Para ativar: remover o style="display:none" abaixo e substituir pelos depoimentos reais -->
+<section class="bloco" aria-labelledby="depo-titulo" style="display:none" id="depoimentos">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow" style="color:var(--azul-piscina);">PROVA SOCIAL</div>
-      <h2>O que técnicos<br>estão falando.</h2>
+      <h2 id="depo-titulo">O que técnicos<br>estão falando.</h2>
       <p class="lead">Depoimentos reais de quem já assistiu, comprou ou treinou com a Academy.</p>
     </div>
-
     <div class="depoimentos-grid">
-      <div class="depo-placeholder">
-        <strong>DEPOIMENTO 1</strong>
-        <small>Substitua por print/texto<br>de depoimento real assim que tiver</small>
-      </div>
-      <div class="depo-placeholder">
-        <strong>DEPOIMENTO 2</strong>
-        <small>Pode ser print do WhatsApp,<br>texto colado ou áudio transcrito</small>
-      </div>
-      <div class="depo-placeholder">
-        <strong>DEPOIMENTO 3</strong>
-        <small>Lojas e distribuidoras<br>contam separadamente</small>
-      </div>
+      <!-- Inserir depoimentos reais aqui no formato .depo-card -->
     </div>
   </div>
 </section>
 
 <!-- ============ CTA WHATSAPP ============ -->
-<section class="cta-grande" id="captura">
+<section class="cta-grande" id="captura" aria-labelledby="captura-titulo">
   <div class="container cta-grid">
     <div>
       <div class="eyebrow">ENTRAR NO GRUPO</div>
-      <h2>Dicas técnicas<br>direto no seu <span class="destaque">WhatsApp</span>.</h2>
+      <h2 id="captura-titulo">Dicas técnicas<br>direto no seu <span class="destaque">WhatsApp</span>.</h2>
       <p>Receba diariamente dicas práticas de manutenção, alertas de aulas novas no YouTube e avisos exclusivos da Academy.</p>
       <ul>
         <li>Dicas técnicas diárias de bomba, robô, inverter e gerador</li>
@@ -971,41 +1080,49 @@ footer ul a:hover { opacity: 1; }
       </ul>
     </div>
 
-    <div class="form-captura">
+    <div class="form-captura" role="region" aria-label="Formulário de entrada no grupo">
       <h3>Quero entrar agora</h3>
       <p class="sub">Acesso imediato. 100% grátis. Sai quando quiser.</p>
-      <div class="form-field">
-        <label>SEU NOME</label>
-        <input type="text" placeholder="Como te chamamos?">
-      </div>
-      <div class="form-field">
-        <label>WHATSAPP</label>
-        <input type="text" placeholder="(11) 99999-9999">
-      </div>
-      <div class="form-field">
-        <label>VOCÊ É</label>
-        <select>
-          <option>Técnico de loja</option>
-          <option>Piscineiro</option>
-          <option>Loja / Distribuidora</option>
-          <option>Outro</option>
-        </select>
-      </div>
-      <a href="#" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;margin-top:8px;">Entrar no grupo →</a>
-      <div class="form-consent">
-        <input type="checkbox" id="consent" checked>
-        <label for="consent">Concordo em receber dicas técnicas e comunicações da Oficina da Piscina no WhatsApp e e-mail. Posso sair a qualquer momento.</label>
-      </div>
+
+      <form id="formGrupo" novalidate>
+        <div class="form-field">
+          <label for="nome">SEU NOME</label>
+          <input type="text" id="nome" name="nome" placeholder="Como te chamamos?" autocomplete="given-name" required>
+          <div class="form-error" id="nome-error">Por favor, informe seu nome.</div>
+        </div>
+        <div class="form-field">
+          <label for="tel">WHATSAPP</label>
+          <input type="tel" id="tel" name="tel" placeholder="(47) 99999-9999" autocomplete="tel" required pattern="[\d\s\(\)\-\+]{10,15}">
+          <div class="form-error" id="tel-error">Por favor, informe um WhatsApp válido.</div>
+        </div>
+        <div class="form-field">
+          <label for="perfil">VOCÊ É</label>
+          <select id="perfil" name="perfil" autocomplete="off">
+            <option value="tecnico-loja">Técnico de loja</option>
+            <option value="piscineiro">Piscineiro</option>
+            <option value="loja">Loja / Distribuidora</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit" id="btnEnviar">
+          Entrar no grupo →
+        </button>
+        <div class="form-consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">Concordo em receber dicas técnicas e comunicações da Oficina da Piscina no WhatsApp. Posso sair a qualquer momento.</label>
+          <div class="form-error" id="consent-error">Você precisa aceitar para continuar.</div>
+        </div>
+      </form>
     </div>
   </div>
 </section>
 
 <!-- ============ B2B ============ -->
-<section class="b2b-bloco" id="para-lojas">
+<section class="b2b-bloco" id="para-lojas" aria-labelledby="b2b-titulo">
   <div class="container b2b-grid">
     <div>
       <div class="eyebrow">PARA LOJAS E DISTRIBUIDORAS</div>
-      <h2>Sua equipe técnica é<br>seu ativo. Cuide dela.</h2>
+      <h2 id="b2b-titulo">Sua equipe técnica é<br>seu ativo. Cuide dela.</h2>
       <p class="b2b-lead">Treinamento presencial customizado para a sua equipe, ministrado pelo Matheus na sua loja. Reduza retrabalho, evite garantia e aumente margem de serviço.</p>
 
       <div class="b2b-numeros">
@@ -1014,8 +1131,9 @@ footer ul a:hover { opacity: 1; }
           <div class="d">Treinamento presencial intensivo</div>
         </div>
         <div class="b2b-num">
-          <div class="v">3.000+</div>
-          <div class="d">A partir de R$ por evento</div>
+          <!-- TODO: inserir o valor real do evento -->
+          <div class="v">Sob consulta</div>
+          <div class="d">Investimento por evento</div>
         </div>
         <div class="b2b-num">
           <div class="v">PDF + Vídeo</div>
@@ -1027,13 +1145,13 @@ footer ul a:hover { opacity: 1; }
         </div>
       </div>
 
-      <a href="#" class="btn btn-primary btn-lg">Pedir orçamento B2B →</a>
+      <!-- Link de orçamento B2B via WhatsApp -->
+      <a href="https://wa.me/5547991083739?text=Ol%C3%A1%2C+tenho+interesse+em+treinamento+presencial+para+minha+equipe.+Pode+me+passar+mais+informa%C3%A7%C3%B5es%3F" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Pedir orçamento B2B →</a>
     </div>
 
     <div class="b2b-visual">
-      <!-- PLACEHOLDER 7: Foto de treinamento presencial, equipe ou bancada -->
-      <span class="placeholder-tag">SUBIR FOTO</span>
-      <div class="ph">
+      <!-- PLACEHOLDER: trocar por <img src="img/b2b-treinamento.jpg" alt="Treinamento presencial da equipe técnica" loading="lazy"> -->
+      <div class="ph" aria-hidden="true">
         <strong>FOTO B2B</strong>
         <small>Treinamento presencial,<br>equipe técnica ou bancada<br>img/b2b-treinamento.jpg</small>
       </div>
@@ -1042,18 +1160,18 @@ footer ul a:hover { opacity: 1; }
 </section>
 
 <!-- ============ BLOG ============ -->
-<section class="bloco cinza">
+<section class="bloco cinza" aria-labelledby="blog-titulo">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow" style="color:var(--azul-piscina);">BLOG</div>
-      <h2>Conteúdo técnico em texto.</h2>
+      <h2 id="blog-titulo">Conteúdo técnico em texto.</h2>
       <p class="lead">Artigos profundos sobre diagnóstico, instalação e manutenção. Para consultar quando precisar.</p>
     </div>
 
     <div class="blog-grid">
-      <a href="/blog/em-breve" class="blog-card">
+      <a href="/blog/sinais-motobomba-queimando" class="blog-card" aria-label="Ler artigo: 5 sinais de que sua motobomba está perto de queimar">
         <div class="blog-img">
-          <div class="ph-content">
+          <div class="ph-content" aria-hidden="true">
             <strong>EM<br>BREVE</strong>
           </div>
         </div>
@@ -1065,9 +1183,9 @@ footer ul a:hover { opacity: 1; }
         </div>
       </a>
 
-      <a href="/blog/em-breve" class="blog-card alt">
+      <a href="/blog/trocador-de-calor-congelando" class="blog-card alt" aria-label="Ler artigo: Trocador de calor congelando — causas e como prevenir">
         <div class="blog-img">
-          <div class="ph-content">
+          <div class="ph-content" aria-hidden="true">
             <strong>EM<br>BREVE</strong>
           </div>
         </div>
@@ -1079,9 +1197,9 @@ footer ul a:hover { opacity: 1; }
         </div>
       </a>
 
-      <a href="/blog/em-breve" class="blog-card">
+      <a href="/blog/quanto-cobrar-visita-tecnica" class="blog-card" aria-label="Ler artigo: Quanto cobrar pela visita técnica em 2026">
         <div class="blog-img">
-          <div class="ph-content">
+          <div class="ph-content" aria-hidden="true">
             <strong>EM<br>BREVE</strong>
           </div>
         </div>
@@ -1101,18 +1219,20 @@ footer ul a:hover { opacity: 1; }
 </section>
 
 <!-- ============ FOOTER ============ -->
-<footer class="site-footer">
+<footer class="site-footer" aria-label="Rodapé">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logos/logo-icone.svg" alt="OP">
+        <img src="logos/logo-icone.svg" alt="Oficina da Piscina Academy" width="56" height="56" loading="lazy">
         <h4 style="color:white;margin-bottom:8px;font-size:14px;letter-spacing:0;">Oficina da Piscina Academy</h4>
         <p>A escola técnica de equipamento de piscina. Aprenda na prática o que o mercado não ensina.</p>
-        <div class="footer-social">
-          <a href="#" title="Instagram">IG</a>
-          <a href="#" title="YouTube">YT</a>
-          <a href="#" title="TikTok">TT</a>
-          <a href="#" title="WhatsApp">WA</a>
+        <div class="footer-social" aria-label="Redes sociais">
+          <a href="https://www.instagram.com/oficinadapiscinaacademy/" target="_blank" rel="noopener noreferrer" title="Instagram da Academy" aria-label="Instagram Oficina da Piscina Academy">IG</a>
+          <!-- TODO: substituir pelo link real do YouTube -->
+          <a href="https://youtube.com/@SEUCANAL" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube">YT</a>
+          <!-- TODO: substituir pelo link real do TikTok -->
+          <a href="https://tiktok.com/@SEUPERFIL" target="_blank" rel="noopener noreferrer" title="TikTok" aria-label="TikTok">TT</a>
+          <a href="https://wa.me/5547991083739" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp">WA</a>
         </div>
       </div>
       <div>
@@ -1128,18 +1248,20 @@ footer ul a:hover { opacity: 1; }
         <h4>Cursos</h4>
         <ul>
           <li><a href="#captura">Grupo grátis</a></li>
-          <li><a href="#">Curso Diagnóstico R$47</a></li>
-          <li><a href="#">Formação Técnica</a></li>
-          <li><a href="#">Comunidade OP</a></li>
+          <!-- TODO: adicionar links reais dos cursos quando estiverem no ar -->
+          <li><a href="#captura">Curso Diagnóstico</a></li>
+          <li><a href="#captura">Formação Técnica</a></li>
+          <li><a href="#captura">Comunidade OP</a></li>
         </ul>
       </div>
       <div>
         <h4>Empresa</h4>
         <ul>
           <li><a href="#para-lojas">Para lojas (B2B)</a></li>
-          <li><a href="#">Contato</a></li>
-          <li><a href="#">Política de privacidade</a></li>
-          <li><a href="#">Termos de uso</a></li>
+          <li><a href="https://wa.me/5547991083739" target="_blank" rel="noopener noreferrer">Contato</a></li>
+          <!-- TODO: criar páginas de política e termos -->
+          <li><a href="/privacidade">Política de privacidade</a></li>
+          <li><a href="/termos">Termos de uso</a></li>
         </ul>
       </div>
     </div>
@@ -1149,6 +1271,132 @@ footer ul a:hover { opacity: 1; }
     </div>
   </div>
 </footer>
+</main>
+
+<!-- ============ BOTÃO FLUTUANTE WHATSAPP ============ -->
+<a
+  href="https://wa.me/5547991083739?text=Ol%C3%A1%2C+quero+saber+mais+sobre+a+Oficina+da+Piscina+Academy!"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fab-whatsapp"
+  aria-label="Falar no WhatsApp"
+  title="Falar no WhatsApp"
+>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ============ SCROLL TO TOP ============ -->
+<button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+
+<noscript>
+  <style>.nav-mobile-toggle { display: none; } .nav-links { display: flex !important; flex-wrap: wrap; }</style>
+</noscript>
+
+<script>
+  // ── Menu mobile ──────────────────────────────────────────────
+  function toggleMenu(btn) {
+    var nav = document.getElementById('navLinks');
+    var isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+    btn.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    btn.textContent = isOpen ? '✕' : '☰';
+  }
+
+  // Fecha o menu ao clicar em qualquer link dentro dele
+  document.getElementById('navLinks').addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      this.classList.remove('open');
+      var btn = document.querySelector('.nav-mobile-toggle');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Abrir menu');
+      btn.textContent = '☰';
+    }
+  });
+
+  // Fecha o menu ao clicar fora dele
+  document.addEventListener('click', function(e) {
+    var nav = document.getElementById('navLinks');
+    var btn = document.querySelector('.nav-mobile-toggle');
+    if (nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Abrir menu');
+      btn.textContent = '☰';
+    }
+  });
+
+  // ── Scroll to top ─────────────────────────────────────────────
+  var scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  }, { passive: true });
+  scrollBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ── Formulário → WhatsApp ─────────────────────────────────────
+  document.getElementById('formGrupo').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var valid = true;
+
+    var nome = document.getElementById('nome');
+    var tel  = document.getElementById('tel');
+    var consent = document.getElementById('consent');
+
+    // Valida nome
+    document.getElementById('nome-error').classList.remove('show');
+    nome.classList.remove('error');
+    if (!nome.value.trim()) {
+      nome.classList.add('error');
+      document.getElementById('nome-error').classList.add('show');
+      valid = false;
+    }
+
+    // Valida telefone
+    document.getElementById('tel-error').classList.remove('show');
+    tel.classList.remove('error');
+    var telLimpo = tel.value.replace(/\D/g, '');
+    if (!tel.value.trim() || telLimpo.length < 10) {
+      tel.classList.add('error');
+      document.getElementById('tel-error').classList.add('show');
+      valid = false;
+    }
+
+    // Valida consentimento
+    document.getElementById('consent-error').classList.remove('show');
+    if (!consent.checked) {
+      document.getElementById('consent-error').classList.add('show');
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    // Monta a mensagem e abre WhatsApp
+    var perfil = document.getElementById('perfil');
+    var perfilTexto = perfil.options[perfil.selectedIndex].text;
+    var msg = 'Olá! Quero entrar no grupo da Oficina da Piscina Academy.\n\n'
+            + 'Nome: ' + nome.value.trim() + '\n'
+            + 'WhatsApp: ' + tel.value.trim() + '\n'
+            + 'Perfil: ' + perfilTexto;
+
+    var btn = document.getElementById('btnEnviar');
+    btn.disabled = true;
+    btn.textContent = 'Redirecionando…';
+
+    window.open('https://wa.me/5547991083739?text=' + encodeURIComponent(msg), '_blank');
+
+    setTimeout(function() {
+      btn.disabled = false;
+      btn.textContent = 'Entrar no grupo →';
+    }, 3000);
+  });
+</script>
 
 </body>
 </html>
