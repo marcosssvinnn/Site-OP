@@ -339,32 +339,31 @@ nav.topo {
   margin-top: 48px;
 }
 
-/* Flagship: Motobomba — grande, inverte cores */
-.equip-card[data-eq="motobomba"] {
-  grid-column: span 3; grid-row: span 2;
-}
-/* Bomba de calor — grande */
+/* + procurado: Bomba de Calor e Robô — grandes */
 .equip-card[data-eq="bomba-calor"] {
   grid-column: span 3; grid-row: span 2;
 }
+.equip-card[data-eq="robo"] {
+  grid-column: span 3; grid-row: span 2;
+}
 /* Restantes — pequenos */
-.equip-card[data-eq="robo"],
 .equip-card[data-eq="gerador"],
+.equip-card[data-eq="desumidificacao"],
+.equip-card[data-eq="motobomba"],
 .equip-card[data-eq="automacao"],
-.equip-card[data-eq="iluminacao"],
-.equip-card[data-eq="desumidificacao"] {
+.equip-card[data-eq="iluminacao"] {
   grid-column: span 2; grid-row: span 1;
 }
 
 @media (max-width: 1024px) {
   .equip-grid { grid-template-columns: repeat(4, 1fr); }
-  .equip-card[data-eq="motobomba"]  { grid-column: span 2; grid-row: span 1; }
-  .equip-card[data-eq="bomba-calor"]{ grid-column: span 2; grid-row: span 1; }
-  .equip-card[data-eq="robo"],
+  .equip-card[data-eq="bomba-calor"] { grid-column: span 2; grid-row: span 1; }
+  .equip-card[data-eq="robo"]        { grid-column: span 2; grid-row: span 1; }
   .equip-card[data-eq="gerador"],
+  .equip-card[data-eq="desumidificacao"],
+  .equip-card[data-eq="motobomba"],
   .equip-card[data-eq="automacao"],
-  .equip-card[data-eq="iluminacao"],
-  .equip-card[data-eq="desumidificacao"] { grid-column: span 2; }
+  .equip-card[data-eq="iluminacao"] { grid-column: span 2; }
 }
 @media (max-width: 640px) {
   .equip-grid { grid-template-columns: 1fr 1fr; }
@@ -409,11 +408,13 @@ nav.topo {
 }
 .equip-glifo span { position: relative; z-index: 1; }
 
-/* Flagship: inverte — fundo ouro, letra navy */
-.equip-card[data-eq="motobomba"] .equip-glifo {
+/* + procurado: inverte — fundo ouro, letra navy */
+.equip-card[data-eq="bomba-calor"] .equip-glifo,
+.equip-card[data-eq="robo"] .equip-glifo {
   background: var(--gold); color: var(--navy); width: 72px; height: 72px; font-size: 34px;
 }
-.equip-card[data-eq="motobomba"] .equip-glifo::before {
+.equip-card[data-eq="bomba-calor"] .equip-glifo::before,
+.equip-card[data-eq="robo"] .equip-glifo::before {
   background: repeating-linear-gradient(
     135deg, transparent 0px, transparent 8px,
     rgba(0,0,0,0.04) 8px, rgba(0,0,0,0.04) 9px
@@ -433,14 +434,14 @@ nav.topo {
   font-size: 20px; color: var(--navy); margin: 0;
   font-weight: 800;
 }
-.equip-card[data-eq="motobomba"] h3 { font-size: 26px; }
-.equip-card[data-eq="bomba-calor"] h3 { font-size: 24px; }
+.equip-card[data-eq="bomba-calor"] h3 { font-size: 26px; }
+.equip-card[data-eq="robo"] h3 { font-size: 26px; }
 
 .equip-card p {
   font-size: 14px; color: var(--muted); line-height: 1.55; margin: 0;
 }
-.equip-card[data-eq="motobomba"] p,
-.equip-card[data-eq="bomba-calor"] p { font-size: 15px; }
+.equip-card[data-eq="bomba-calor"] p,
+.equip-card[data-eq="robo"] p { font-size: 15px; }
 
 .equip-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; }
 
@@ -1002,30 +1003,18 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
     <div class="section-head">
       <span class="section-line" aria-hidden="true"></span>
       <span class="eyebrow">O que você aprende</span>
-      <h2 id="equip-titulo">Tudo sobre equipamento de piscina, do diagnóstico à configuração.</h2>
-      <p class="lead">Não é tratamento de água. Não é química. Aqui é equipamento técnico: diagnóstico, instalação, manutenção e configuração de cada componente da casa de máquinas.</p>
+      <h2 id="equip-titulo">Diagnóstico, instalação e manutenção de cada equipamento da casa de máquinas.</h2>
+      <p class="lead">Os equipamentos que o mercado mais paga para quem sabe mexer — e que a maioria dos técnicos ainda não domina.</p>
     </div>
 
     <div class="equip-grid">
 
-      <!-- Flagship -->
-      <div class="equip-card" data-eq="motobomba">
-        <span class="equip-badge-flagship">Flagship</span>
-        <div class="equip-glifo"><span>M</span></div>
-        <h3>Motobomba</h3>
-        <p>Diagnóstico de falha, troca de selo mecânico e capacitor, instalação e regulagem. Equipamentos de alta potência incluídos.</p>
-        <div class="equip-tags">
-          <span class="tag-pill">Diagnóstico</span>
-          <span class="tag-pill">Instalação</span>
-          <span class="tag-pill">Alta potência</span>
-        </div>
-      </div>
-
-      <!-- Bomba de Calor grande -->
+      <!-- Bomba de Calor — grande esquerdo (mais desejado) -->
       <div class="equip-card" data-eq="bomba-calor">
+        <span class="equip-badge-flagship">+ procurado</span>
         <div class="equip-glifo"><span>B</span></div>
         <h3>Bomba de Calor</h3>
-        <p>Instalação, configuração de modo de operação, diagnóstico de falhas em trocadores convencionais e modelos inverter.</p>
+        <p>Instalação, configuração de modo de operação, diagnóstico de falhas em trocadores convencionais e modelos inverter. Mercado em expansão e poucos técnicos sabem configurar.</p>
         <div class="equip-tags">
           <span class="tag-pill">Trocador</span>
           <span class="tag-pill">Inverter</span>
@@ -1033,17 +1022,20 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
         </div>
       </div>
 
-      <!-- Pequenos -->
+      <!-- Robô — grande direito -->
       <div class="equip-card" data-eq="robo">
+        <span class="equip-badge-flagship">+ procurado</span>
         <div class="equip-glifo"><span>R</span></div>
         <h3>Robô Automático</h3>
-        <p>Manutenção preventiva e corretiva, troca de escovas e rolos, configuração de modos de limpeza.</p>
+        <p>Manutenção preventiva e corretiva, troca de escovas e rolos, diagnóstico elétrico e configuração de modos de limpeza. Ticket alto, concorrência baixa.</p>
         <div class="equip-tags">
           <span class="tag-pill">Manutenção</span>
+          <span class="tag-pill">Diagnóstico</span>
           <span class="tag-pill">Configuração</span>
         </div>
       </div>
 
+      <!-- Pequenos — ordem por demanda -->
       <div class="equip-card" data-eq="gerador">
         <div class="equip-glifo"><span>G</span></div>
         <h3>Gerador de Cloro</h3>
@@ -1051,6 +1043,26 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
         <div class="equip-tags">
           <span class="tag-pill">Pareamento</span>
           <span class="tag-pill">Célula</span>
+        </div>
+      </div>
+
+      <div class="equip-card" data-eq="desumidificacao">
+        <div class="equip-glifo"><span>D</span></div>
+        <h3>Desumidificação</h3>
+        <p>Instalação e manutenção de desumidificadores para piscinas cobertas, regulagem e diagnóstico de compressor.</p>
+        <div class="equip-tags">
+          <span class="tag-pill">Coberta</span>
+          <span class="tag-pill">Compressor</span>
+        </div>
+      </div>
+
+      <div class="equip-card" data-eq="motobomba">
+        <div class="equip-glifo"><span>M</span></div>
+        <h3>Motobomba</h3>
+        <p>Diagnóstico de falha, troca de selo mecânico e capacitor, instalação e regulagem. Alta e baixa potência.</p>
+        <div class="equip-tags">
+          <span class="tag-pill">Selo mecânico</span>
+          <span class="tag-pill">Diagnóstico</span>
         </div>
       </div>
 
@@ -1071,16 +1083,6 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
         <div class="equip-tags">
           <span class="tag-pill">LED</span>
           <span class="tag-pill">Elétrica</span>
-        </div>
-      </div>
-
-      <div class="equip-card" data-eq="desumidificacao">
-        <div class="equip-glifo"><span>D</span></div>
-        <h3>Desumidificação</h3>
-        <p>Instalação e manutenção de desumidificadores para piscinas cobertas, regulagem e diagnóstico de compressor.</p>
-        <div class="equip-tags">
-          <span class="tag-pill">Coberta</span>
-          <span class="tag-pill">Compressor</span>
         </div>
       </div>
 
