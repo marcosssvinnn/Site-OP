@@ -522,12 +522,17 @@ nav.topo {
   grid-template-columns: repeat(4, 1fr);
   gap: 12px; margin-top: 44px;
 }
+.marcas-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 780px; margin-left: auto; margin-right: auto;
+}
 @media (max-width: 720px) { .marcas-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .marcas-grid--3 { grid-template-columns: 1fr; } }
 
 .marca-card {
   border: 1px solid rgba(255,255,255,0.10);
   border-radius: 6px;
-  padding: 28px 20px;
+  padding: 36px 24px;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 8px;
   text-align: center;
@@ -540,7 +545,7 @@ nav.topo {
 }
 .marca-card .mc-nome {
   font-family: 'Archivo', sans-serif;
-  font-size: 18px; font-weight: 900;
+  font-size: 24px; font-weight: 900;
   color: #fff; letter-spacing: -0.03em;
   line-height: 1;
 }
@@ -1143,47 +1148,25 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
   <div class="container">
     <div class="section-head">
       <span class="section-line" aria-hidden="true"></span>
-      <span class="eyebrow">Marcas que o Matheus conhece por dentro</span>
-      <h2 id="marcas-titulo">Treinado pelas maiores fabricantes do setor.</h2>
-      <p class="lead">Autorização e treinamento técnico direto com as marcas líderes em equipamento de piscina no Brasil.</p>
+      <span class="eyebrow">Marcas que o Matheus domina</span>
+      <h2 id="marcas-titulo">Atendemos as maiores e melhores marcas do mercado.</h2>
+      <p class="lead">O treinamento é uma iniciativa nossa — desenvolvido na prática, atendendo as líderes do setor de equipamento de piscina no Brasil.</p>
     </div>
 
-    <div class="marcas-grid">
+    <div class="marcas-grid marcas-grid--3">
       <div class="marca-card destaque">
         <div class="mc-nome">Fluidra</div>
-        <div class="mc-tipo">Técnico autorizado</div>
+        <div class="mc-tipo">Motobomba · Robô · Automação</div>
       </div>
       <div class="marca-card destaque">
         <div class="mc-nome">Syllent</div>
-        <div class="mc-tipo">Técnico autorizado</div>
+        <div class="mc-tipo">Motobomba · Gerador de cloro</div>
       </div>
-      <div class="marca-card">
+      <div class="marca-card destaque">
         <div class="mc-nome">Tholz</div>
-        <div class="mc-tipo">Bomba de calor</div>
-      </div>
-      <div class="marca-card">
-        <div class="mc-nome">Swimflex</div>
-        <div class="mc-tipo">Automação</div>
-      </div>
-      <div class="marca-card">
-        <div class="mc-nome">Zodiac</div>
-        <div class="mc-tipo">Robô automático</div>
-      </div>
-      <div class="marca-card">
-        <div class="mc-nome">Hayward</div>
-        <div class="mc-tipo">Motobomba / filtro</div>
-      </div>
-      <div class="marca-card">
-        <div class="mc-nome">Astral</div>
-        <div class="mc-tipo">Iluminação</div>
-      </div>
-      <div class="marca-card">
-        <div class="mc-nome">Pentair</div>
-        <div class="mc-tipo">Automação / bomba</div>
+        <div class="mc-tipo">Bomba de calor · Inverter</div>
       </div>
     </div>
-
-    <p class="marcas-nota">+ outras marcas atendidas sob consulta</p>
   </div>
 </section>
 
