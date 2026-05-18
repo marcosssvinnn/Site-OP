@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de cloro perdendo célula rápido demais — Oficina da Piscina Academy</title>
+  <meta name="description" content="Célula com vida útil de 5 anos durando 8 meses. Quase sempre é pH fora de faixa ou corrente acima do recomendado. Tem como prevenir — e cobrar pela manutenção preventiva.">
+  <link rel="icon" href="../logos/logo-icone.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #003366; --blue: #0066CC; --gold: #FFC107;
+      --gray-bg: #F5F5F7; --ink: #1A1A1A; --paper: #FFFFFF;
+      --muted: #6B7280; --border: #E4E4E8;
+    }
+    body { font-family: 'Manrope', sans-serif; color: var(--ink); background: var(--paper); line-height: 1.7; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+
+    .nav { background: var(--navy); padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 36px; height: auto; }
+    .nav-logo span { font-family: 'Archivo', sans-serif; font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+    .nav-back { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.6); text-decoration: none; letter-spacing: .06em; }
+    .nav-back:hover { color: var(--gold); text-decoration: none; }
+
+    .artigo-hero { background: var(--navy); padding: 60px 24px 56px; text-align: center; }
+    .artigo-hero .container { max-width: 760px; margin: 0 auto; }
+    .artigo-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(255,193,7,0.4); padding: 4px 12px; border-radius: 2px; margin-bottom: 20px; }
+    .artigo-hero h1 { font-family: 'Archivo', sans-serif; font-size: clamp(26px, 4vw, 42px); font-weight: 900; color: #fff; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+    .artigo-hero .resumo { font-size: 17px; color: rgba(255,255,255,0.70); line-height: 1.6; margin-bottom: 28px; }
+    .artigo-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.40); letter-spacing: .1em; text-transform: uppercase; }
+
+    .artigo-corpo { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+    .artigo-corpo h2 { font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 800; color: var(--navy); margin: 44px 0 14px; letter-spacing: -0.02em; }
+    .artigo-corpo h3 { font-family: 'Archivo', sans-serif; font-size: 18px; font-weight: 700; color: var(--navy); margin: 32px 0 10px; }
+    .artigo-corpo p { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 18px; }
+    .artigo-corpo p:first-child { font-size: 18px; color: var(--ink); font-weight: 500; }
+    .artigo-corpo strong { color: var(--navy); font-weight: 700; }
+    .artigo-corpo ul, .artigo-corpo ol { padding-left: 22px; margin-bottom: 18px; }
+    .artigo-corpo li { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 8px; }
+
+    .causa-card { background: var(--gray-bg); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; padding: 20px 22px; margin: 24px 0; }
+    .causa-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .causa-card h3 { margin: 0 0 10px; font-size: 17px; }
+    .causa-card p { margin: 0; font-size: 15px; }
+
+    .destaque-box { background: var(--navy); color: #fff; border-radius: 6px; padding: 24px 26px; margin: 36px 0; }
+    .destaque-box p { color: rgba(255,255,255,0.85); margin: 0 0 12px; font-size: 15px; }
+    .destaque-box p:last-child { margin: 0; }
+    .destaque-box strong { color: var(--gold); }
+
+    .divider { width: 40px; height: 2px; background: var(--gold); margin: 40px 0; }
+
+    .artigo-cta { background: var(--gray-bg); border-radius: 8px; padding: 36px 32px; text-align: center; margin-top: 56px; }
+    .artigo-cta h3 { font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .artigo-cta p { color: var(--muted); font-size: 15px; margin-bottom: 22px; }
+    .btn-cta { display: inline-block; background: #25D366; color: #fff; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 6px; text-decoration: none; }
+    .btn-cta:hover { background: #1ebc5a; text-decoration: none; }
+
+    .artigo-footer { background: var(--navy); text-align: center; padding: 28px 24px; }
+    .artigo-footer p { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: .06em; }
+    .artigo-footer a { color: rgba(255,255,255,0.5); }
+
+    @media (max-width: 600px) {
+      .artigo-corpo { padding: 40px 20px 60px; }
+      .artigo-cta { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="../index.html">
+    <img src="../logos/logo-icone.svg" alt="" width="36" height="36" aria-hidden="true">
+    <span>OP Academy</span>
+  </a>
+  <a href="../index.html" class="nav-back">← Voltar</a>
+</nav>
+
+<header class="artigo-hero">
+  <div class="container">
+    <span class="artigo-tag">Gerador de Cloro</span>
+    <h1>Gerador de cloro perdendo célula rápido demais</h1>
+    <p class="resumo">Célula com vida útil de 5 anos durando 8 meses. Já vi isso dezenas de vezes. Quase sempre é pH fora de faixa ou corrente acima do recomendado. Tem como prevenir — e cobrar por isso.</p>
+    <div class="artigo-meta">Matheus All Service &nbsp;·&nbsp; 5 min de leitura</div>
+  </div>
+</header>
+
+<article class="artigo-corpo">
+
+  <p>A célula eletrolítica é o coração do gerador de cloro — e também a peça mais cara quando precisa ser trocada. Cliente liga reclamando que trocou a célula há menos de um ano e o equipamento já está dando erro de novo. Isso não é azar. É causa identificável e prevenível.</p>
+
+  <p>Vou te contar o que encontro na maioria desses casos e como você pode transformar isso em manutenção preventiva — com recorrência garantida.</p>
+
+  <div class="divider"></div>
+
+  <h2>As causas mais comuns de célula com vida curta</h2>
+
+  <div class="causa-card">
+    <div class="causa-num">Causa 01</div>
+    <h3>pH fora da faixa ideal</h3>
+    <p>Essa é a principal. A célula eletrolítica trabalha com uma faixa de pH específica — entre 7,2 e 7,6. Quando o pH fica consistentemente abaixo de 7,0, a acidez corrói as placas de titânio com revestimento de rutênio muito mais rápido que o normal. Quando fica acima de 7,8, a eficiência cai e o equipamento força mais corrente para compensar. Nos dois extremos, a vida útil da célula cai drasticamente. O problema é que muitos clientes não medem pH regularmente — ou medem e não ajustam. Parte do seu trabalho é orientar isso a cada visita.</p>
+  </div>
+
+  <div class="causa-card">
+    <div class="causa-num">Causa 02</div>
+    <h3>Potência configurada acima do necessário</h3>
+    <p>O gerador tem um ajuste de porcentagem de potência. Muitos clientes — ou técnicos que fizeram a instalação — deixam em 100% achando que vai funcionar melhor. Na prática, rodar consistentemente em 80–100% de potência acelera o desgaste das placas da célula. O ideal é dimensionar corretamente a capacidade do gerador para o volume da piscina e trabalhar na faixa de 40–70% de potência no dia a dia. Se o equipamento precisa ficar em 90% pra manter o cloro, ele está subdimensionado para aquela piscina.</p>
+  </div>
+
+  <div class="causa-card">
+    <div class="causa-num">Causa 03</div>
+    <h3>Teor de sal fora da especificação</h3>
+    <p>Cada modelo tem uma faixa de salinidade recomendada — geralmente entre 3.000 e 4.500 ppm. Abaixo disso, o equipamento força mais corrente para produzir cloro, acelerando o desgaste. Acima do limite, o excesso de sal pode causar corrosão nas partes metálicas e comprometer os eletrodos. Sempre verifique a salinidade com um medidor calibrado na instalação e nas manutenções. O sensor interno do equipamento pode dar leituras incorretas com o tempo.</p>
+  </div>
+
+  <div class="causa-card">
+    <div class="causa-num">Causa 04</div>
+    <h3>Falta de limpeza periódica da célula</h3>
+    <p>A célula acumula incrustação de calcário ao longo do tempo — especialmente em regiões com água dura. Essa camada de incrustação reduz a eficiência da eletrólise e faz o equipamento trabalhar com mais esforço. A maioria dos fabricantes recomenda limpeza a cada 3–6 meses, dependendo do uso. O procedimento é simples: ácido muriático diluído (1 parte de ácido para 10 de água), imersão por 15 minutos, enxágue. Mas precisa ser feito com segurança e no intervalo certo.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Como transformar isso em recorrência</h2>
+
+  <p>Gerador de cloro é um dos melhores equipamentos para criar manutenção preventiva com contrato. O cliente já tem o equipamento — ele não quer trocar célula todo ano. Você oferece um plano trimestral ou semestral que inclui:</p>
+
+  <ul>
+    <li>Verificação e calibração da salinidade</li>
+    <li>Inspeção e limpeza da célula</li>
+    <li>Conferência do pH e orientação de ajuste</li>
+    <li>Verificação dos parâmetros de potência configurados</li>
+    <li>Atualização de firmware se disponível</li>
+  </ul>
+
+  <p>Com uma visita de 30–40 minutos a cada 3 ou 6 meses, você garante a vida útil do equipamento — e o cliente para de ter surpresa de célula queimada no verão, quando a piscina está no pico de uso.</p>
+
+  <div class="destaque-box">
+    <p><strong>Quanto cobrar:</strong> depende da sua região e da complexidade do equipamento, mas uma visita de manutenção preventiva de gerador de cloro costuma justificar entre 60% e 80% do valor de uma visita de emergência. O cliente aceita porque entende o custo-benefício — uma célula nova custa muito mais do que 4 manutenções no ano.</p>
+    <p>Técnico que tem contrato de manutenção preventiva tem previsibilidade de faturamento. É diferente de depender só de chamado de emergência.</p>
+  </div>
+
+  <h2>Quando a célula realmente chegou no fim da vida</h2>
+
+  <p>Mesmo com toda manutenção correta, a célula tem uma vida útil finita. Os sinais de que chegou na hora da troca:</p>
+
+  <ul>
+    <li>Erro de célula persistente mesmo após limpeza e verificação de parâmetros</li>
+    <li>Produção de cloro muito abaixo mesmo com potência alta e salinidade correta</li>
+    <li>Placas visivelmente corroídas, com partes soltas ou deformadas</li>
+    <li>Equipamento em modo de proteção constante sem causa externa identificada</li>
+  </ul>
+
+  <p>Nesses casos, o diagnóstico correto evita que o cliente compre uma célula nova achando que vai resolver, quando o problema pode estar na placa eletrônica ou no módulo de controle — que custa mais caro e tem outro prazo de entrega.</p>
+
+  <div class="artigo-cta">
+    <h3>Quer discutir casos de gerador de cloro?</h3>
+    <p>No grupo da Academy você encontra outros técnicos que trabalham com o equipamento todo dia. Entra grátis.</p>
+    <a href="https://wa.me/5547991083739?text=Ol%C3%A1%2C+quero+entrar+no+grupo+da+Oficina+da+Piscina+Academy!" class="btn-cta" target="_blank" rel="noopener noreferrer">Entrar no grupo grátis →</a>
+  </div>
+
+</article>
+
+<footer class="artigo-footer">
+  <p>© 2026 <a href="../index.html">Oficina da Piscina Academy</a> · Matheus All Service</p>
+</footer>
+
+</body>
+</html>
