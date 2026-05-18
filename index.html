@@ -68,7 +68,7 @@
 
 /* ============ RESET & BASE ============ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   font-family: 'Manrope', -apple-system, sans-serif;
   font-weight: 500;
@@ -90,7 +90,13 @@ h1, h2, h3, h4 {
   font-weight: 800;
 }
 h1 { font-size: clamp(22px, 6vw, 80px); letter-spacing: -0.035em; line-height: 0.96; overflow-wrap: break-word; word-break: break-word; }
-@media (max-width: 480px) { h1 { font-size: clamp(20px, 5.5vw, 26px); line-height: 1.12; letter-spacing: -0.02em; } }
+@media (max-width: 480px) {
+  h1 { font-size: clamp(20px, 5.5vw, 26px); line-height: 1.12; letter-spacing: -0.02em; width: 100%; }
+  .eyebrow { letter-spacing: 0.08em; word-break: break-word; }
+  .hero .lead { font-size: 15px; width: 100%; max-width: 100%; }
+  .hero-micro { width: 100%; overflow: hidden; }
+  .hero-stat .lbl { letter-spacing: 0.06em; }
+}
 h2 { font-size: clamp(32px, 4vw, 54px); }
 h3 { font-size: clamp(18px, 2vw, 24px); line-height: 1.2; letter-spacing: -0.01em; }
 
@@ -264,7 +270,7 @@ nav.topo {
 }
 .hero .container { position: relative; z-index: 2; padding: 72px 24px; }
 .hero-inner {
-  max-width: 840px; margin: 0 auto;
+  max-width: 840px; width: 100%; margin: 0 auto;
   text-align: center;
   display: flex; flex-direction: column; align-items: center;
 }
