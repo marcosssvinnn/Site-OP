@@ -818,15 +818,27 @@ nav.topo {
   aspect-ratio: 16/10;
   background: var(--navy);
   display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
 }
-.blog-img-alt { background: var(--gray-bg); }
-.blog-img-label {
+.blog-img::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0px, transparent 18px,
+    rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 19px
+  );
+}
+.blog-img-tema-hidraulica { background: #002244; }
+.blog-img-tema-calor      { background: #1a0a00; }
+.blog-img-tema-cloro      { background: #001a33; }
+.blog-img-icone {
   font-family: 'Archivo', sans-serif;
-  font-size: 18px; font-weight: 900;
-  color: rgba(255,255,255,0.3);
-  text-transform: uppercase; text-align: center; padding: 20px;
+  font-size: 72px; font-weight: 900;
+  color: var(--gold); opacity: 0.35;
+  line-height: 1; position: relative; z-index: 1;
+  letter-spacing: -0.05em;
 }
-.blog-img-alt .blog-img-label { color: rgba(0,51,102,0.3); }
 .blog-info { padding: 18px 20px 20px; }
 .blog-tag {
   font-family: 'JetBrains Mono', monospace;
@@ -1361,45 +1373,45 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
     </div>
 
     <div class="blog-grid">
-      <a href="/blog/sinais-motobomba-queimando" class="blog-card" aria-label="Ler artigo: 5 sinais de que sua motobomba está perto de queimar">
-        <div class="blog-img">
-          <div class="blog-img-label">Em breve</div>
+      <a href="https://www.youtube.com/@Oficinadapiscinaacademy" target="_blank" rel="noopener noreferrer" class="blog-card" aria-label="Ler artigo: 5 sinais de que sua motobomba está perto de queimar">
+        <div class="blog-img blog-img-tema-hidraulica">
+          <div class="blog-img-icone">M</div>
         </div>
         <div class="blog-info">
-          <span class="blog-tag">Hidráulica</span>
+          <span class="blog-tag">Motobomba</span>
           <h4>5 sinais de que sua motobomba está perto de queimar</h4>
-          <p>Guia completo de diagnóstico precoce. O que olhar antes que vire problema.</p>
-          <div class="blog-meta">Em breve · 8 min de leitura</div>
+          <p>Ruído diferente, vazão caindo, motor esquentando mais que o normal — cada um desses sinais tem uma causa específica. Aprendi isso abrindo centenas de bombas. Antes de ela parar de vez, você já consegue diagnosticar.</p>
+          <div class="blog-meta">Matheus All Service · 8 min</div>
         </div>
       </a>
 
-      <a href="/blog/trocador-de-calor-congelando" class="blog-card" aria-label="Ler artigo: Trocador de calor congelando, causas e como prevenir">
-        <div class="blog-img blog-img-alt">
-          <div class="blog-img-label">Em breve</div>
+      <a href="https://www.youtube.com/@Oficinadapiscinaacademy" target="_blank" rel="noopener noreferrer" class="blog-card" aria-label="Ler artigo: Bomba de calor não aquece: o que verificar antes de chamar assistência">
+        <div class="blog-img blog-img-tema-calor">
+          <div class="blog-img-icone">B</div>
         </div>
         <div class="blog-info">
-          <span class="blog-tag">Aquecimento</span>
-          <h4>Trocador de calor congelando: causas e como prevenir</h4>
-          <p>Diagnóstico de causa raiz e checklist de prevenção sazonal.</p>
-          <div class="blog-meta">Em breve · 6 min de leitura</div>
+          <span class="blog-tag">Bomba de Calor</span>
+          <h4>Bomba de calor não aquece: o que verificar antes de chamar assistência</h4>
+          <p>Na maioria das chamadas que recebo, o problema não é o equipamento — é configuração errada, fluxo insuficiente ou sensor. Um checklist de 10 minutos resolve 70% dos casos sem abrir nada.</p>
+          <div class="blog-meta">Matheus All Service · 6 min</div>
         </div>
       </a>
 
-      <a href="/blog/quanto-cobrar-visita-tecnica" class="blog-card" aria-label="Ler artigo: Quanto cobrar pela visita técnica em 2026">
-        <div class="blog-img">
-          <div class="blog-img-label">Em breve</div>
+      <a href="https://www.youtube.com/@Oficinadapiscinaacademy" target="_blank" rel="noopener noreferrer" class="blog-card" aria-label="Ler artigo: Gerador de cloro perdendo célula rápido demais">
+        <div class="blog-img blog-img-tema-cloro">
+          <div class="blog-img-icone">G</div>
         </div>
         <div class="blog-info">
-          <span class="blog-tag">Carreira</span>
-          <h4>Quanto cobrar pela visita técnica em 2026</h4>
-          <p>Modelo de precificação que dá margem real, não preço de loja.</p>
-          <div class="blog-meta">Em breve · 5 min de leitura</div>
+          <span class="blog-tag">Gerador de Cloro</span>
+          <h4>Gerador de cloro perdendo célula rápido demais</h4>
+          <p>Célula com vida útil de 5 anos durando 8 meses. Já vi isso dezenas de vezes. Quase sempre é pH fora de faixa ou corrente acima do recomendado. Tem como prevenir — e tem como cobrar pela manutenção preventiva.</p>
+          <div class="blog-meta">Matheus All Service · 5 min</div>
         </div>
       </a>
     </div>
 
     <div class="videos-cta">
-      <a href="/blog" class="btn btn-outline-dark btn-lg">Ver todos os artigos →</a>
+      <a href="https://www.youtube.com/@Oficinadapiscinaacademy" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-lg">Ver mais no YouTube →</a>
     </div>
   </div>
 </section>
