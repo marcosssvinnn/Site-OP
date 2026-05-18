@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 sinais de que sua motobomba está perto de queimar — Oficina da Piscina Academy</title>
+  <meta name="description" content="Ruído diferente, motor esquentando, queda de pressão. Cada sinal tem uma causa. Aprenda a diagnosticar antes que a bomba pare de vez.">
+  <link rel="icon" href="../logos/logo-icone.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #003366; --blue: #0066CC; --gold: #FFC107;
+      --gray-bg: #F5F5F7; --ink: #1A1A1A; --paper: #FFFFFF;
+      --muted: #6B7280; --border: #E4E4E8;
+    }
+    body { font-family: 'Manrope', sans-serif; color: var(--ink); background: var(--paper); line-height: 1.7; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+
+    /* NAV */
+    .nav { background: var(--navy); padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 36px; height: auto; }
+    .nav-logo span { font-family: 'Archivo', sans-serif; font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+    .nav-back { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.6); text-decoration: none; letter-spacing: .06em; }
+    .nav-back:hover { color: var(--gold); text-decoration: none; }
+
+    /* HERO ARTIGO */
+    .artigo-hero { background: var(--navy); padding: 60px 24px 56px; text-align: center; }
+    .artigo-hero .container { max-width: 760px; margin: 0 auto; }
+    .artigo-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(255,193,7,0.4); padding: 4px 12px; border-radius: 2px; margin-bottom: 20px; }
+    .artigo-hero h1 { font-family: 'Archivo', sans-serif; font-size: clamp(26px, 4vw, 42px); font-weight: 900; color: #fff; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+    .artigo-hero .resumo { font-size: 17px; color: rgba(255,255,255,0.70); line-height: 1.6; margin-bottom: 28px; }
+    .artigo-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.40); letter-spacing: .1em; text-transform: uppercase; }
+
+    /* CORPO */
+    .artigo-corpo { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+    .artigo-corpo h2 { font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 800; color: var(--navy); margin: 44px 0 14px; letter-spacing: -0.02em; }
+    .artigo-corpo h3 { font-family: 'Archivo', sans-serif; font-size: 18px; font-weight: 700; color: var(--navy); margin: 32px 0 10px; }
+    .artigo-corpo p { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 18px; }
+    .artigo-corpo p:first-child { font-size: 18px; color: var(--ink); font-weight: 500; }
+    .artigo-corpo strong { color: var(--navy); font-weight: 700; }
+    .artigo-corpo ul, .artigo-corpo ol { padding-left: 22px; margin-bottom: 18px; }
+    .artigo-corpo li { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 6px; }
+
+    .sinal-card { background: var(--gray-bg); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; padding: 20px 22px; margin: 28px 0; }
+    .sinal-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .sinal-card h3 { margin: 0 0 10px; font-size: 17px; }
+    .sinal-card p { margin: 0; font-size: 15px; }
+
+    .destaque-box { background: var(--navy); color: #fff; border-radius: 6px; padding: 24px 26px; margin: 36px 0; }
+    .destaque-box p { color: rgba(255,255,255,0.85); margin: 0; font-size: 15px; }
+    .destaque-box strong { color: var(--gold); }
+
+    .divider { width: 40px; height: 2px; background: var(--gold); margin: 40px 0; }
+
+    /* CTA FINAL */
+    .artigo-cta { background: var(--gray-bg); border-radius: 8px; padding: 36px 32px; text-align: center; margin-top: 56px; }
+    .artigo-cta h3 { font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .artigo-cta p { color: var(--muted); font-size: 15px; margin-bottom: 22px; }
+    .btn-cta { display: inline-block; background: #25D366; color: #fff; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 6px; text-decoration: none; }
+    .btn-cta:hover { background: #1ebc5a; text-decoration: none; }
+
+    /* FOOTER SIMPLES */
+    .artigo-footer { background: var(--navy); text-align: center; padding: 28px 24px; }
+    .artigo-footer p { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: .06em; }
+    .artigo-footer a { color: rgba(255,255,255,0.5); }
+
+    @media (max-width: 600px) {
+      .artigo-corpo { padding: 40px 20px 60px; }
+      .artigo-cta { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="../index.html">
+    <img src="../logos/logo-icone.svg" alt="" width="36" height="36" aria-hidden="true">
+    <span>OP Academy</span>
+  </a>
+  <a href="../index.html" class="nav-back">← Voltar</a>
+</nav>
+
+<header class="artigo-hero">
+  <div class="container">
+    <span class="artigo-tag">Motobomba</span>
+    <h1>5 sinais de que sua motobomba está perto de queimar</h1>
+    <p class="resumo">Ruído diferente, motor esquentando, queda de pressão. Cada sinal tem uma causa específica — e dá pra diagnosticar antes que a bomba pare de vez.</p>
+    <div class="artigo-meta">Matheus All Service &nbsp;·&nbsp; 8 min de leitura</div>
+  </div>
+</header>
+
+<article class="artigo-corpo">
+
+  <p>Já atendi centenas de chamadas de bomba "que parou do nada". Quando a gente investiga, quase sempre o equipamento estava avisando há semanas. O cliente não sabia o que olhar. Esse artigo existe por causa disso.</p>
+
+  <p>Motobomba não quebra sem avisar. Ela dá sinal. Quem sabe interpretar esses sinais chega antes do problema — e cobra pelo diagnóstico, não só pela troca de peça.</p>
+
+  <div class="divider"></div>
+
+  <div class="sinal-card">
+    <div class="sinal-num">Sinal 01</div>
+    <h3>Ruído diferente do normal</h3>
+    <p>Um rangido metálico, um barulho de rolamento, um chiado que não estava lá antes. O selo mecânico desgastado faz um rangido seco quando começa a falhar. Rolamento com folga faz um barulho de "rrrr" constante que piora com o tempo. Cavitação — quando falta água ou a sucção está obstruída — faz um barulho de pedrinhas dentro da carcaça. Cada som tem uma origem diferente. Aprenda a distinguir antes de abrir a bomba.</p>
+  </div>
+
+  <div class="sinal-card">
+    <div class="sinal-num">Sinal 02</div>
+    <h3>Motor aquecendo mais que o normal</h3>
+    <p>Toda motobomba aquece em operação — isso é normal. O problema é quando você passa a mão na carcaça e não consegue manter por mais de 3 segundos. Motor quente demais pode indicar condensador fraco, bobinamento com falha de isolamento ou ventilação bloqueada. Um motor trabalhando acima da capacidade térmica queima o enrolamento. Quando chega nesse ponto, não tem reparo — é troca de motor ou de bomba.</p>
+  </div>
+
+  <div class="sinal-card">
+    <div class="sinal-num">Sinal 03</div>
+    <h3>Perda de pressão ou queda de vazão</h3>
+    <p>A piscina que antes ficava limpa em 6 horas agora precisa de 10. O skimmer não está puxando com força. A pressão no manômetro do filtro caiu sem motivo aparente. Pode ser entupimento no pré-filtro, desgaste do rotor, ou problema no selo que está deixando ar entrar no sistema. Antes de culpar o filtro, verifique a bomba. Na maioria dos casos que atendo, a causa está ali.</p>
+  </div>
+
+  <div class="sinal-card">
+    <div class="sinal-num">Sinal 04</div>
+    <h3>Vibração excessiva na casa de máquinas</h3>
+    <p>Uma bomba bem instalada e alinhada vibra pouco. Quando a vibração começa a passar para a tubulação, para a laje ou para o suporte, alguma coisa está fora de equilíbrio. Pode ser rotor danificado, parafuso de fixação solto, ou base de instalação com problema. Vibração prolongada acelera o desgaste de todos os componentes internos — especialmente o selo mecânico.</p>
+  </div>
+
+  <div class="sinal-card">
+    <div class="sinal-num">Sinal 05</div>
+    <h3>Disjuntor disparando com frequência</h3>
+    <p>O disjuntor existe para proteger o circuito. Se ele está caindo toda semana, é porque a bomba está puxando mais corrente do que deveria. Isso acontece quando o motor está com defeito elétrico, quando o rotor está travando por corpo estranho, ou quando a tensão de alimentação está fora da especificação. Nunca troque o disjuntor por um de amperagem maior sem investigar a causa — você vai queimar o motor e ainda criar risco elétrico.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Como usar esses sinais no diagnóstico</h2>
+
+  <p>Quando chego numa chamada de bomba com problema, sigo uma ordem: primeiro ouço o equipamento funcionando (ou tento ligar se estiver desligado), depois meço a corrente com o alicate amperímetro, verifico a tensão de alimentação, abro o pré-filtro, e só então desmonto a bomba se necessário.</p>
+
+  <p>Na maioria das vezes, o diagnóstico leva menos de 15 minutos. O tempo que leva pra apertar um parafuso de aterramento frouxo, ou limpar um pré-filtro entupido que estava causando cavitação.</p>
+
+  <div class="destaque-box">
+    <p><strong>Dica prática:</strong> sempre que fizer uma visita de manutenção preventiva, testa a corrente da bomba com o alicate amperímetro e anota. Em 3 ou 4 visitas você já tem o histórico do equipamento — e consegue mostrar pro cliente quando a corrente começa a subir, antes de qualquer falha visível.</p>
+  </div>
+
+  <h2>O que fazer quando identificar um desses sinais</h2>
+
+  <p>Depende de qual sinal é. Ruído de rolamento ou de selo mecânico — agenda a troca antes que pare de vez. Motor aquecendo e corrente alta — faz o laudo elétrico antes de qualquer coisa. Queda de pressão — começa pelo pré-filtro e vá eliminando causas uma a uma.</p>
+
+  <p>O que não pode fazer é ignorar. Bomba que está avisando e continua rodando vai parar numa sexta-feira à noite, no verão, quando o cliente tem festa marcada no sábado. Aí o custo — financeiro e de relacionamento — é muito maior do que teria sido uma manutenção preventiva.</p>
+
+  <p>É exatamente esse tipo de conhecimento — diagnóstico técnico, leitura de equipamento, prevenção — que a gente trabalha no grupo da Oficina da Piscina Academy.</p>
+
+  <div class="artigo-cta">
+    <h3>Quer aprender mais sobre diagnóstico de bomba?</h3>
+    <p>Entra no grupo gratuito. Toda semana tem caso real, dica técnica e discussão com outros técnicos do Brasil.</p>
+    <a href="https://wa.me/5547991083739?text=Ol%C3%A1%2C+quero+entrar+no+grupo+da+Oficina+da+Piscina+Academy!" class="btn-cta" target="_blank" rel="noopener noreferrer">Entrar no grupo grátis →</a>
+  </div>
+
+</article>
+
+<footer class="artigo-footer">
+  <p>© 2026 <a href="../index.html">Oficina da Piscina Academy</a> · Matheus All Service</p>
+</footer>
+
+</body>
+</html>
