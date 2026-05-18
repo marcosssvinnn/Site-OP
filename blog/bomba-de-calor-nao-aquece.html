@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bomba de calor não aquece: o que verificar antes de chamar assistência — Oficina da Piscina Academy</title>
+  <meta name="description" content="Na maioria dos chamados, o problema não é o equipamento. É configuração errada, fluxo insuficiente ou sensor. Um checklist de 10 minutos resolve 70% dos casos.">
+  <link rel="icon" href="../logos/logo-icone.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #003366; --blue: #0066CC; --gold: #FFC107;
+      --gray-bg: #F5F5F7; --ink: #1A1A1A; --paper: #FFFFFF;
+      --muted: #6B7280; --border: #E4E4E8;
+    }
+    body { font-family: 'Manrope', sans-serif; color: var(--ink); background: var(--paper); line-height: 1.7; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+
+    .nav { background: var(--navy); padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 36px; height: auto; }
+    .nav-logo span { font-family: 'Archivo', sans-serif; font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+    .nav-back { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.6); text-decoration: none; letter-spacing: .06em; }
+    .nav-back:hover { color: var(--gold); text-decoration: none; }
+
+    .artigo-hero { background: var(--navy); padding: 60px 24px 56px; text-align: center; }
+    .artigo-hero .container { max-width: 760px; margin: 0 auto; }
+    .artigo-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(255,193,7,0.4); padding: 4px 12px; border-radius: 2px; margin-bottom: 20px; }
+    .artigo-hero h1 { font-family: 'Archivo', sans-serif; font-size: clamp(26px, 4vw, 42px); font-weight: 900; color: #fff; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+    .artigo-hero .resumo { font-size: 17px; color: rgba(255,255,255,0.70); line-height: 1.6; margin-bottom: 28px; }
+    .artigo-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.40); letter-spacing: .1em; text-transform: uppercase; }
+
+    .artigo-corpo { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+    .artigo-corpo h2 { font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 800; color: var(--navy); margin: 44px 0 14px; letter-spacing: -0.02em; }
+    .artigo-corpo h3 { font-family: 'Archivo', sans-serif; font-size: 18px; font-weight: 700; color: var(--navy); margin: 32px 0 10px; }
+    .artigo-corpo p { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 18px; }
+    .artigo-corpo p:first-child { font-size: 18px; color: var(--ink); font-weight: 500; }
+    .artigo-corpo strong { color: var(--navy); font-weight: 700; }
+    .artigo-corpo ul, .artigo-corpo ol { padding-left: 22px; margin-bottom: 18px; }
+    .artigo-corpo li { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 8px; }
+
+    .check-card { background: var(--gray-bg); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; padding: 20px 22px; margin: 24px 0; }
+    .check-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .check-card h3 { margin: 0 0 10px; font-size: 17px; }
+    .check-card p { margin: 0; font-size: 15px; }
+
+    .destaque-box { background: var(--navy); color: #fff; border-radius: 6px; padding: 24px 26px; margin: 36px 0; }
+    .destaque-box p { color: rgba(255,255,255,0.85); margin: 0; font-size: 15px; }
+    .destaque-box strong { color: var(--gold); }
+
+    .divider { width: 40px; height: 2px; background: var(--gold); margin: 40px 0; }
+
+    .artigo-cta { background: var(--gray-bg); border-radius: 8px; padding: 36px 32px; text-align: center; margin-top: 56px; }
+    .artigo-cta h3 { font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .artigo-cta p { color: var(--muted); font-size: 15px; margin-bottom: 22px; }
+    .btn-cta { display: inline-block; background: #25D366; color: #fff; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 6px; text-decoration: none; }
+    .btn-cta:hover { background: #1ebc5a; text-decoration: none; }
+
+    .artigo-footer { background: var(--navy); text-align: center; padding: 28px 24px; }
+    .artigo-footer p { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: .06em; }
+    .artigo-footer a { color: rgba(255,255,255,0.5); }
+
+    @media (max-width: 600px) {
+      .artigo-corpo { padding: 40px 20px 60px; }
+      .artigo-cta { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="../index.html">
+    <img src="../logos/logo-icone.svg" alt="" width="36" height="36" aria-hidden="true">
+    <span>OP Academy</span>
+  </a>
+  <a href="../index.html" class="nav-back">← Voltar</a>
+</nav>
+
+<header class="artigo-hero">
+  <div class="container">
+    <span class="artigo-tag">Bomba de Calor</span>
+    <h1>Bomba de calor não aquece: o que verificar antes de chamar assistência</h1>
+    <p class="resumo">Na maioria dos chamados que recebo, o problema não é o equipamento. É configuração errada, fluxo insuficiente ou sensor. Um checklist de 10 minutos resolve 70% dos casos sem abrir nada.</p>
+    <div class="artigo-meta">Matheus All Service &nbsp;·&nbsp; 6 min de leitura</div>
+  </div>
+</header>
+
+<article class="artigo-corpo">
+
+  <p>Bomba de calor é o equipamento que mais cresce em chamado técnico nos últimos dois anos. E é também o que mais gera diagnóstico equivocado — porque muita gente abre o equipamento antes de verificar o básico.</p>
+
+  <p>A maioria dos chamados de "bomba de calor não aquece" que atendo termina sem nenhuma peça trocada. O equipamento estava funcionando. O problema estava fora dele. Esse checklist é o que eu sigo antes de qualquer coisa.</p>
+
+  <div class="divider"></div>
+
+  <div class="check-card">
+    <div class="check-num">Verificação 01</div>
+    <h3>Temperatura ambiente</h3>
+    <p>Bomba de calor trabalha extraindo calor do ar. Quando a temperatura ambiente cai abaixo de 15°C, a maioria dos modelos convencionais começa a perder eficiência de forma significativa. Abaixo de 10°C, alguns entram em modo de proteção ou desligam automaticamente. Antes de qualquer diagnóstico, veja a temperatura do dia. Se está frio demais, o equipamento está se comportando exatamente como deveria.</p>
+  </div>
+
+  <div class="check-card">
+    <div class="check-num">Verificação 02</div>
+    <h3>Configuração de temperatura no painel</h3>
+    <p>Parece óbvio, mas acontece mais do que você imagina. O cliente muda o modo de operação sem perceber, ou a temperatura alvo está configurada abaixo da temperatura atual da piscina — aí o equipamento não liga porque acha que não precisa. Confira o setpoint no painel, confira o modo de operação (aquecimento, resfriamento, automático), e confira se o timer não está bloqueando o funcionamento.</p>
+  </div>
+
+  <div class="check-card">
+    <div class="check-num">Verificação 03</div>
+    <h3>Fluxo de água</h3>
+    <p>A bomba de calor tem um sensor de fluxo que impede o funcionamento quando a vazão está abaixo do mínimo — por segurança, para não superaquecer o trocador. Se a motobomba da piscina está com problema, se o pré-filtro está entupido, se uma válvula está fechada parcialmente, a bomba de calor não vai aquecer. Sempre verifico o fluxo antes de qualquer outra coisa. Pré-filtro limpo, motobomba funcionando bem, válvulas abertas — aí sim sigo para o equipamento.</p>
+  </div>
+
+  <div class="check-card">
+    <div class="check-num">Verificação 04</div>
+    <h3>Sensor de temperatura da água</h3>
+    <p>O sensor que mede a temperatura da piscina fica geralmente na tubulação de retorno. Se ele estiver com mau contato, ou lendo uma temperatura incorreta, o equipamento pode achar que a piscina já está quente o suficiente — e não ligar o ciclo de aquecimento. Dá pra testar com um termômetro manual: compara a leitura do painel com a temperatura real da água. Se houver diferença significativa, o sensor é o problema.</p>
+  </div>
+
+  <div class="check-card">
+    <div class="check-num">Verificação 05</div>
+    <h3>Volume de água e tempo de funcionamento</h3>
+    <p>Piscina de 150m³ com bomba de calor dimensionada para 80m³. Isso aparece bastante. O equipamento está funcionando normalmente — só não tem capacidade de aquecer aquele volume no tempo que o cliente espera. Confirma a capacidade do equipamento (BTUs ou kW) e faz a conta com o volume da piscina. Se não fecha, o problema é de especificação, não de defeito.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Quando o problema realmente é no equipamento</h2>
+
+  <p>Se o checklist acima não resolveu, aí sim o problema pode estar no equipamento. Os pontos mais comuns que encontro:</p>
+
+  <ul>
+    <li><strong>Trocador de calor com incrustação</strong> — reduz a transferência térmica e pode causar superaquecimento</li>
+    <li><strong>Compressor com carga de gás baixa</strong> — queda de eficiência progressiva, não para abruptamente</li>
+    <li><strong>Placa eletrônica com erro de comunicação</strong> — aparece código de erro no display</li>
+    <li><strong>Válvula de expansão com problema</strong> — mais difícil de diagnosticar sem equipamento específico</li>
+    <li><strong>Ventoinha do condensador com problema</strong> — barulho diferente, motor quente, eficiência reduzida</li>
+  </ul>
+
+  <div class="destaque-box">
+    <p><strong>Atenção nos modelos inverter:</strong> a bomba de calor inverter modula a potência conforme a necessidade. Isso significa que ela pode estar funcionando em baixa capacidade — aquecendo devagar — sem apresentar nenhuma falha. Se o cliente reclama que "está demorando muito", o equipamento pode estar bem. Verifique a configuração de modo e o diferencial de temperatura configurado no painel.</p>
+  </div>
+
+  <h2>Por que saber isso faz diferença na sua carreira</h2>
+
+  <p>Bomba de calor é o equipamento com maior ticket médio de visita técnica no setor. Mas é também onde mais se perde tempo — e dinheiro — com diagnósticos mal feitos. Técnico que chega, faz o checklist em 10 minutos e identifica que o problema era o pré-filtro entupido sai com a situação resolvida, o cliente satisfeito e sem precisar pedir peça nenhuma.</p>
+
+  <p>Técnico que abre o equipamento sem verificar o básico, desmonta o trocador, pede orçamento de compressor, e depois descobre que era fluxo insuficiente — perde o cliente e ainda paga o retorno.</p>
+
+  <p>É exatamente esse tipo de raciocínio técnico — leitura de situação, checklist antes de abrir — que separa quem vive de chamado de quem constrói carteira de cliente.</p>
+
+  <div class="artigo-cta">
+    <h3>Quer aprofundar em bomba de calor?</h3>
+    <p>No grupo da Academy a gente discute casos reais toda semana. Entra grátis e acompanha as discussões técnicas.</p>
+    <a href="https://wa.me/5547991083739?text=Ol%C3%A1%2C+quero+entrar+no+grupo+da+Oficina+da+Piscina+Academy!" class="btn-cta" target="_blank" rel="noopener noreferrer">Entrar no grupo grátis →</a>
+  </div>
+
+</article>
+
+<footer class="artigo-footer">
+  <p>© 2026 <a href="../index.html">Oficina da Piscina Academy</a> · Matheus All Service</p>
+</footer>
+
+</body>
+</html>
