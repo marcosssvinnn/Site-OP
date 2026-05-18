@@ -516,32 +516,53 @@ nav.topo {
 }
 .autoridade-ig svg { width: 18px; height: 18px; fill: var(--blue); }
 
-/* ============ GALERIA SUMMITS ============ */
-.galeria-summits {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 12px; margin-top: 40px;
+/* ============ MARCAS ============ */
+.marcas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px; margin-top: 44px;
 }
-@media (max-width: 720px) { .galeria-summits { grid-template-columns: repeat(2, 1fr); } }
-.galeria-item {
-  aspect-ratio: 1; border-radius: 4px; overflow: hidden;
-  background: repeating-linear-gradient(
-    135deg,
-    rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 14px,
-    rgba(255,255,255,0.06) 14px, rgba(255,255,255,0.06) 15px
-  );
-  border: 1px solid rgba(255,255,255,0.07);
-  display: flex; align-items: center; justify-content: center;
-  position: relative;
+@media (max-width: 720px) { .marcas-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.marca-card {
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 6px;
+  padding: 28px 20px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+  text-align: center;
+  transition: border-color .2s, background .2s;
+  background: rgba(255,255,255,0.03);
 }
-.galeria-item .ph {
-  text-align: center; padding: 16px;
-  color: rgba(255,255,255,0.2);
+.marca-card:hover {
+  border-color: var(--gold);
+  background: rgba(255,193,7,0.06);
 }
-.galeria-item .ph strong {
-  display: block; font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: .15em; margin-bottom: 4px;
+.marca-card .mc-nome {
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px; font-weight: 900;
+  color: #fff; letter-spacing: -0.03em;
+  line-height: 1;
 }
-.galeria-item .ph small { font-size: 9px; opacity: 0.6; }
+.marca-card .mc-tipo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; letter-spacing: .14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.40);
+  line-height: 1;
+}
+.marca-card.destaque {
+  border-color: var(--gold);
+  background: rgba(255,193,7,0.08);
+}
+.marca-card.destaque .mc-nome { color: var(--gold); }
+.marcas-nota {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: .12em;
+  color: rgba(255,255,255,0.30);
+  margin-top: 28px;
+  text-transform: uppercase;
+}
 
 /* ============ VÍDEOS ============ */
 .videos-grid {
@@ -1117,31 +1138,52 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
   </div>
 </section>
 
-<!-- ============ GALERIA SUMMITS ============ -->
-<section class="bloco fundo-escuro" aria-labelledby="galeria-titulo">
+<!-- ============ MARCAS ============ -->
+<section class="bloco fundo-escuro" aria-labelledby="marcas-titulo">
   <div class="container">
     <div class="section-head">
       <span class="section-line" aria-hidden="true"></span>
-      <span class="eyebrow">Reconhecimento das fábricas</span>
-      <h2 id="galeria-titulo">Em campo, em eventos, em treinamentos.</h2>
-      <p class="lead">Presença em summits, treinamentos oficiais e relacionamento direto com as fabricantes do setor.</p>
+      <span class="eyebrow">Marcas que o Matheus conhece por dentro</span>
+      <h2 id="marcas-titulo">Treinado pelas maiores fabricantes do setor.</h2>
+      <p class="lead">Autorização e treinamento técnico direto com as marcas líderes em equipamento de piscina no Brasil.</p>
     </div>
 
-    <div class="galeria-summits">
-      <!-- PLACEHOLDER: substituir cada item por <img src="img/summit-N.jpg" alt="..." loading="lazy"> -->
-      <div class="galeria-item" aria-hidden="true">
-        <div class="ph"><strong>FOTO 1</strong><small>Summit ou treinamento</small></div>
+    <div class="marcas-grid">
+      <div class="marca-card destaque">
+        <div class="mc-nome">Fluidra</div>
+        <div class="mc-tipo">Técnico autorizado</div>
       </div>
-      <div class="galeria-item" aria-hidden="true">
-        <div class="ph"><strong>FOTO 2</strong><small>Fábrica visitada</small></div>
+      <div class="marca-card destaque">
+        <div class="mc-nome">Syllent</div>
+        <div class="mc-tipo">Técnico autorizado</div>
       </div>
-      <div class="galeria-item" aria-hidden="true">
-        <div class="ph"><strong>FOTO 3</strong><small>Treinamento Fluidra</small></div>
+      <div class="marca-card">
+        <div class="mc-nome">Tholz</div>
+        <div class="mc-tipo">Bomba de calor</div>
       </div>
-      <div class="galeria-item" aria-hidden="true">
-        <div class="ph"><strong>FOTO 4</strong><small>Treinamento Syllent</small></div>
+      <div class="marca-card">
+        <div class="mc-nome">Swimflex</div>
+        <div class="mc-tipo">Automação</div>
+      </div>
+      <div class="marca-card">
+        <div class="mc-nome">Zodiac</div>
+        <div class="mc-tipo">Robô automático</div>
+      </div>
+      <div class="marca-card">
+        <div class="mc-nome">Hayward</div>
+        <div class="mc-tipo">Motobomba / filtro</div>
+      </div>
+      <div class="marca-card">
+        <div class="mc-nome">Astral</div>
+        <div class="mc-tipo">Iluminação</div>
+      </div>
+      <div class="marca-card">
+        <div class="mc-nome">Pentair</div>
+        <div class="mc-tipo">Automação / bomba</div>
       </div>
     </div>
+
+    <p class="marcas-nota">+ outras marcas atendidas sob consulta</p>
   </div>
 </section>
 
