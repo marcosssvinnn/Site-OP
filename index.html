@@ -358,48 +358,28 @@ nav.topo {
 .logo-marca:hover { opacity: 1; }
 
 /* ============ EQUIPAMENTOS ============ */
-.equip-grid {
+/* 4 pilares - territorios centrais */
+.pilares-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto auto;
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   margin-top: 48px;
 }
+@media (max-width: 640px) { .pilares-grid { grid-template-columns: 1fr; } }
 
-/* + procurado: Bomba de Calor e Robo - grandes */
-.equip-card[data-eq="bomba-calor"] {
-  grid-column: span 3; grid-row: span 2;
+/* 3 complementares - menores */
+.equip-sec-titulo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); text-align: center;
+  margin: 44px 0 18px;
 }
-.equip-card[data-eq="robo"] {
-  grid-column: span 3; grid-row: span 2;
+.equip-secundarios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
-/* Restantes - pequenos */
-.equip-card[data-eq="gerador"],
-.equip-card[data-eq="desumidificacao"],
-.equip-card[data-eq="motobomba"],
-.equip-card[data-eq="automacao"],
-.equip-card[data-eq="iluminacao"] {
-  grid-column: span 2; grid-row: span 1;
-}
-
-@media (max-width: 1024px) {
-  .equip-grid { grid-template-columns: repeat(4, 1fr); }
-  .equip-card[data-eq="bomba-calor"] { grid-column: span 2; grid-row: span 1; }
-  .equip-card[data-eq="robo"]        { grid-column: span 2; grid-row: span 1; }
-  .equip-card[data-eq="gerador"],
-  .equip-card[data-eq="desumidificacao"],
-  .equip-card[data-eq="motobomba"],
-  .equip-card[data-eq="automacao"],
-  .equip-card[data-eq="iluminacao"] { grid-column: span 2; }
-}
-@media (max-width: 640px) {
-  .equip-grid { grid-template-columns: 1fr 1fr; }
-  .equip-card[data-eq] { grid-column: span 1; grid-row: span 1; }
-}
-@media (max-width: 400px) {
-  .equip-grid { grid-template-columns: 1fr; }
-  .equip-card[data-eq] { grid-column: span 1; }
-}
+@media (max-width: 760px) { .equip-secundarios { grid-template-columns: 1fr; } }
 
 .equip-card {
   background: var(--paper);
@@ -435,13 +415,11 @@ nav.topo {
 }
 .equip-glifo span { position: relative; z-index: 1; }
 
-/* + procurado: inverte - fundo ouro, letra navy */
-.equip-card[data-eq="bomba-calor"] .equip-glifo,
-.equip-card[data-eq="robo"] .equip-glifo {
+/* Pilares: glifo invertido - fundo ouro, letra navy */
+.equip-card.pilar .equip-glifo {
   background: var(--gold); color: var(--navy); width: 72px; height: 72px; font-size: 34px;
 }
-.equip-card[data-eq="bomba-calor"] .equip-glifo::before,
-.equip-card[data-eq="robo"] .equip-glifo::before {
+.equip-card.pilar .equip-glifo::before {
   background: repeating-linear-gradient(
     135deg, transparent 0px, transparent 8px,
     rgba(0,0,0,0.04) 8px, rgba(0,0,0,0.04) 9px
@@ -461,14 +439,15 @@ nav.topo {
   font-size: 20px; color: var(--navy); margin: 0;
   font-weight: 800;
 }
-.equip-card[data-eq="bomba-calor"] h3 { font-size: 26px; }
-.equip-card[data-eq="robo"] h3 { font-size: 26px; }
+.equip-card.pilar h3 { font-size: 24px; }
 
 .equip-card p {
   font-size: 14px; color: var(--muted); line-height: 1.55; margin: 0;
 }
-.equip-card[data-eq="bomba-calor"] p,
-.equip-card[data-eq="robo"] p { font-size: 15px; }
+.equip-card.pilar p { font-size: 15px; }
+.equip-card.sec { padding: 22px 20px; }
+.equip-card.sec .equip-glifo { width: 46px; height: 46px; font-size: 22px; }
+.equip-card.sec h3 { font-size: 17px; }
 
 .equip-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; }
 
@@ -1039,7 +1018,7 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
       </div>
     </a>
     <div class="nav-links" id="navLinks">
-      <a href="#equipamentos">O que ensinamos</a>
+      <a href="#equipamentos">Especialidades</a>
       <a href="#autoridade">Quem é o Matheus</a>
       <a href="#videos">Vídeos</a>
       <a href="#para-lojas">Para lojas</a>
@@ -1058,17 +1037,17 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
     <div class="hero-inner">
 
       <span class="section-line" aria-hidden="true"></span>
-      <span class="eyebrow">Treinamento profissional em equipamento de piscina</span>
+      <span class="eyebrow">Capacitação técnica em equipamento de piscina</span>
 
-      <h1>O técnico que domina o <span class="accent">equipamento de piscina</span> <span class="accent">nunca falta</span> serviço.</h1>
+      <h1>A escola que forma os <span class="accent">especialistas em equipamento de piscina</span> do Brasil.</h1>
 
       <p class="lead">
-        Aprenda na prática a diagnosticar, instalar e configurar motobombas, robôs automáticos, bomba de calor, gerador de cloro, iluminação, automação e desumidificação.
+        Capacitação técnica em instalação, configuração, diagnóstico e manutenção dos equipamentos que o mercado mais usa. Não é limpeza, não é tratamento químico. É equipamento.
       </p>
 
       <div class="hero-ctas">
         <a href="#captura" class="btn btn-primary btn-lg">Entrar no grupo grátis →</a>
-        <a href="#equipamentos" class="btn btn-outline-white btn-lg">Ver o que você aprende</a>
+        <a href="#equipamentos" class="btn btn-outline-white btn-lg">Ver as especialidades</a>
       </div>
       <p class="hero-micro">grupo exclusivo &nbsp;·&nbsp; grátis &nbsp;·&nbsp; saia quando quiser</p>
 
@@ -1103,21 +1082,55 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
   </div>
 </div>
 
-<!-- ============ EQUIPAMENTOS ============ -->
+<!-- ============ POR QUE EXISTIMOS ============ -->
+<section class="bloco" aria-labelledby="porque-titulo">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-line" aria-hidden="true"></span>
+      <span class="eyebrow" style="color:var(--navy)">Por que existimos</span>
+      <h2 id="porque-titulo">O equipamento de piscina evoluiu. A capacitação técnica precisa evoluir junto.</h2>
+      <p class="lead">Inverter, automação por app, gerador de cloro, diagnóstico eletrônico. A casa de máquinas ficou tecnológica e a maioria dos profissionais não acompanhou. A Academy existe para fechar esse buraco.</p>
+    </div>
+
+    <div class="personas-grid">
+      <div class="persona-card">
+        <div class="persona-num" aria-hidden="true">01</div>
+        <h3>Aquecimento cresceu</h3>
+        <p>Bomba de calor virou padrão em piscina de bom nível. Instalar e configurar inverter exige técnico de verdade.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-num" aria-hidden="true">02</div>
+        <h3>Automação avançou</h3>
+        <p>Centrais, app e integração de equipamento mudaram a casa de máquinas. Quem não domina fica para trás.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-num" aria-hidden="true">03</div>
+        <h3>Diagnóstico ficou complexo</h3>
+        <p>Placa eletrônica, sensor, comunicação. Resolver não é mais trocar peça no chute. É entender o sistema.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-num" aria-hidden="true">04</div>
+        <h3>O mercado paga por isso</h3>
+        <p>Quem domina equipamento cobra mais e fideliza cliente. A escassez de técnico capacitado é uma oportunidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EQUIPAMENTOS / ESPECIALIDADES ============ -->
 <section class="bloco fundo-cinza" id="equipamentos" aria-labelledby="equip-titulo">
   <div class="container">
     <div class="section-head">
       <span class="section-line" aria-hidden="true"></span>
-      <span class="eyebrow">O que você aprende</span>
-      <h2 id="equip-titulo">Diagnóstico, instalação e manutenção de cada equipamento da casa de máquinas.</h2>
-      <p class="lead">Os equipamentos que o mercado mais paga para quem sabe mexer. Os que a maioria dos técnicos ainda não domina.</p>
+      <span class="eyebrow">As especialidades</span>
+      <h2 id="equip-titulo">Quatro pilares técnicos. O território que a Academy domina.</h2>
+      <p class="lead">Os equipamentos que o mercado mais paga para quem sabe mexer. Os que a maioria dos profissionais ainda não domina.</p>
     </div>
 
-    <div class="equip-grid">
+    <div class="pilares-grid">
 
-      <!-- Bomba de Calor - grande esquerdo (mais desejado) -->
-      <div class="equip-card" data-eq="bomba-calor">
-        <span class="equip-badge-flagship">+ procurado</span>
+      <div class="equip-card pilar" data-eq="bomba-calor">
+        <span class="equip-badge-flagship">pilar</span>
         <div class="equip-glifo"><span>B</span></div>
         <h3>Bomba de Calor</h3>
         <p>Instalação, configuração de modo de operação, diagnóstico de falhas em trocadores convencionais e modelos inverter. Mercado em expansão e poucos técnicos sabem configurar.</p>
@@ -1128,9 +1141,8 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
         </div>
       </div>
 
-      <!-- Robo - grande direito -->
-      <div class="equip-card" data-eq="robo">
-        <span class="equip-badge-flagship">+ procurado</span>
+      <div class="equip-card pilar" data-eq="robo">
+        <span class="equip-badge-flagship">pilar</span>
         <div class="equip-glifo"><span>R</span></div>
         <h3>Robô Automático</h3>
         <p>Manutenção preventiva e corretiva, troca de escovas e rolos, diagnóstico elétrico e configuração de modos de limpeza. Ticket alto, concorrência baixa.</p>
@@ -1141,57 +1153,63 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
         </div>
       </div>
 
-      <!-- Pequenos - ordem por demanda -->
-      <div class="equip-card" data-eq="gerador">
-        <div class="equip-glifo"><span>G</span></div>
-        <h3>Gerador de Cloro</h3>
-        <p>Pareamento no app, calibração de sal, troca de célula eletrolítica e diagnóstico de eletrodo.</p>
-        <div class="equip-tags">
-          <span class="tag-pill">Pareamento</span>
-          <span class="tag-pill">Célula</span>
-        </div>
-      </div>
-
-      <div class="equip-card" data-eq="desumidificacao">
-        <div class="equip-glifo"><span>D</span></div>
-        <h3>Desumidificação</h3>
-        <p>Instalação e manutenção de desumidificadores para piscinas cobertas, regulagem e diagnóstico de compressor.</p>
-        <div class="equip-tags">
-          <span class="tag-pill">Coberta</span>
-          <span class="tag-pill">Compressor</span>
-        </div>
-      </div>
-
-      <div class="equip-card" data-eq="motobomba">
+      <div class="equip-card pilar" data-eq="motobomba">
+        <span class="equip-badge-flagship">pilar</span>
         <div class="equip-glifo"><span>M</span></div>
         <h3>Motobomba</h3>
-        <p>Diagnóstico de falha, troca de selo mecânico e capacitor, instalação e regulagem. Alta e baixa potência.</p>
+        <p>Diagnóstico de falha, troca de selo mecânico e capacitor, instalação e regulagem. Alta e baixa potência. A base de toda casa de máquinas.</p>
         <div class="equip-tags">
           <span class="tag-pill">Selo mecânico</span>
+          <span class="tag-pill">Capacitor</span>
           <span class="tag-pill">Diagnóstico</span>
         </div>
       </div>
 
-      <div class="equip-card" data-eq="automacao">
+      <div class="equip-card pilar" data-eq="gerador">
+        <span class="equip-badge-flagship">pilar</span>
+        <div class="equip-glifo"><span>G</span></div>
+        <h3>Gerador de Cloro</h3>
+        <p>Pareamento no app, calibração de sal, troca de célula eletrolítica e diagnóstico de eletrodo. Manutenção preventiva que vira receita recorrente.</p>
+        <div class="equip-tags">
+          <span class="tag-pill">Pareamento</span>
+          <span class="tag-pill">Célula</span>
+          <span class="tag-pill">Calibração</span>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="equip-sec-titulo">Também na formação</p>
+    <div class="equip-secundarios">
+      <div class="equip-card sec" data-eq="automacao">
         <div class="equip-glifo"><span>A</span></div>
         <h3>Automação</h3>
-        <p>Configuração de centrais de automação, integração de equipamentos e parametrização via app.</p>
+        <p>Configuração de centrais, integração de equipamentos e parametrização via app.</p>
         <div class="equip-tags">
           <span class="tag-pill">Central</span>
           <span class="tag-pill">App</span>
         </div>
       </div>
 
-      <div class="equip-card" data-eq="iluminacao">
+      <div class="equip-card sec" data-eq="iluminacao">
         <div class="equip-glifo"><span>I</span></div>
         <h3>Iluminação</h3>
-        <p>Instalação e substituição de LED de piscina, diagnóstico elétrico e configuração de central de luz.</p>
+        <p>Instalação e substituição de LED, diagnóstico elétrico e configuração de central de luz.</p>
         <div class="equip-tags">
           <span class="tag-pill">LED</span>
           <span class="tag-pill">Elétrica</span>
         </div>
       </div>
 
+      <div class="equip-card sec" data-eq="desumidificacao">
+        <div class="equip-glifo"><span>D</span></div>
+        <h3>Desumidificação</h3>
+        <p>Instalação e manutenção em piscinas cobertas, regulagem e diagnóstico de compressor.</p>
+        <div class="equip-tags">
+          <span class="tag-pill">Coberta</span>
+          <span class="tag-pill">Compressor</span>
+        </div>
+      </div>
     </div>
 
     <div class="equip-cta-wrap">
@@ -1219,7 +1237,7 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
         <span class="eyebrow" style="color:var(--navy)">Quem ensina</span>
         <h2 id="autor-titulo">Matheus All Service.</h2>
         <p class="lead-grande">Especialista em bomba de calor, robô automático e gerador de cloro. Técnico autorizado Fluidra e Syllent há mais de 10 anos.</p>
-        <p>Instalei e configurei bombas de calor inverter das principais marcas, fiz manutenção em robôs automáticos, pareei e calibrei geradores de cloro em piscinas de alto padrão. Motobomba também faz parte do dia a dia, da manutenção básica à troca de selo em casa de máquinas de grande porte.</p>
+        <p>Não aprendi em sala de aula. Aprendi na bancada, abrindo equipamento e resolvendo o que outros técnicos não conseguiram. Instalei e configurei bombas de calor inverter das principais marcas, fiz manutenção em robôs automáticos, pareei e calibrei geradores de cloro em piscinas de alto padrão. Motobomba é o dia a dia, da manutenção básica à troca de selo em casa de máquinas de grande porte.</p>
         <p>O que ensino aqui é exatamente o que uso na bancada todo dia.</p>
 
         <a href="https://www.instagram.com/matheusallservice/" target="_blank" rel="noopener noreferrer" class="autoridade-ig">
@@ -1285,30 +1303,30 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
     <div class="section-head">
       <span class="section-line" aria-hidden="true"></span>
       <span class="eyebrow">Para quem é</span>
-      <h2 id="paraquem-titulo">Quem aprende aqui.</h2>
+      <h2 id="paraquem-titulo">Quem se especializa aqui.</h2>
       <p class="lead">Se você lida com equipamento de piscina ou quer começar a lidar, este é o lugar certo.</p>
     </div>
 
     <div class="personas-grid">
       <div class="persona-card">
         <div class="persona-num" aria-hidden="true">01</div>
-        <h3>Técnico de loja</h3>
-        <p>Funcionário de loja de piscina que precisa atender melhor: instalação, garantia, configuração.</p>
+        <h3>Piscineiros</h3>
+        <p>Piscineiro de limpeza que quer parar de só limpar e começar a faturar com serviço técnico de equipamento.</p>
       </div>
       <div class="persona-card">
         <div class="persona-num" aria-hidden="true">02</div>
-        <h3>Piscineiro evoluindo</h3>
-        <p>Piscineiro de limpeza que quer subir o ticket fazendo serviços técnicos de equipamento.</p>
+        <h3>Técnicos</h3>
+        <p>Quem já mexe com equipamento e quer dominar de verdade bomba de calor, gerador, motobomba e automação.</p>
       </div>
       <div class="persona-card">
         <div class="persona-num" aria-hidden="true">03</div>
-        <h3>Técnico migrando</h3>
-        <p>Vem de refrigeração, elétrica ou ar-condicionado e quer entrar num nicho rentável.</p>
+        <h3>Empresas e lojas</h3>
+        <p>Loja, distribuidora ou assistência que precisa capacitar a equipe e reduzir retrabalho e garantia.</p>
       </div>
       <div class="persona-card">
         <div class="persona-num" aria-hidden="true">04</div>
-        <h3>Loja ou distribuidora</h3>
-        <p>Empresa que precisa capacitar a equipe técnica para reduzir retrabalho e garantia.</p>
+        <h3>Novos profissionais</h3>
+        <p>Quem vem de elétrica, refrigeração ou ar-condicionado e quer entrar num nicho técnico rentável.</p>
       </div>
     </div>
   </div>
@@ -1534,12 +1552,12 @@ footer ul a:focus-visible { outline: 1px solid var(--gold); border-radius: 2px; 
       </div>
 
       <div class="footer-col">
-        <h4>Cursos</h4>
+        <h4>A Academy</h4>
         <ul>
+          <li><a href="#equipamentos">As especialidades</a></li>
+          <li><a href="#autoridade">Quem é o Matheus</a></li>
           <li><a href="#captura">Grupo grátis</a></li>
-          <li><a href="#captura">Curso Diagnóstico</a></li>
-          <li><a href="#captura">Formação Técnica</a></li>
-          <li><a href="#captura">Comunidade OP</a></li>
+          <li><a href="#para-lojas">Treinamento B2B</a></li>
         </ul>
       </div>
 
